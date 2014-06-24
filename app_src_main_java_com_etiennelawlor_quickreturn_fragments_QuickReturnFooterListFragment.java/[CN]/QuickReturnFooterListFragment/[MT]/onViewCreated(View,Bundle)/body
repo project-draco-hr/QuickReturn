@@ -3,7 +3,7 @@
   bindUIElements(view);
   mValues=getResources().getStringArray(R.array.languages);
   ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,android.R.id.text1,mValues);
-  mNotifyingListView.setAdapter(adapter);
-  mNotifyingListView.setOnScrollChangedListener(mOnScrollChangedListener);
-  mNotifyingListView.setOverScrollEnabled(false);
+  mQuickReturnListView.setAdapter(adapter);
+  mQuickReturnListView.getViewTreeObserver().addOnGlobalLayoutListener(mQuickReturnListViewOnGlobalLayoutListener);
+  mQuickReturnListView.setOnScrollListener(mQuickReturnListViewOnScrollListener);
 }

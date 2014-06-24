@@ -6,6 +6,8 @@ case 1:
   return getString(R.string.footer);
 case 2:
 return getString(R.string.header_footer);
+case 3:
+return "Footer List";
 }
 return null;
 }

@@ -1,6 +1,0 @@
-{
-  QuickReturnFooterFragment fragment=new QuickReturnFooterFragment();
-  Bundle args=new Bundle();
-  fragment.setArguments(args);
-  return fragment;
-}

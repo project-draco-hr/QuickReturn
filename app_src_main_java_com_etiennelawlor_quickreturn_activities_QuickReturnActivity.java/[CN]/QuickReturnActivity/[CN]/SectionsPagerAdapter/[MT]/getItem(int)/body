@@ -1,12 +1,19 @@
 {
+  Bundle bundle=new Bundle();
 switch (position) {
 case 0:
-    return QuickReturnHeaderFragment.newInstance();
+    bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.HEADER.name());
+  return QuickReturnFragment.newInstance(bundle);
 case 1:
-  return QuickReturnFooterFragment.newInstance();
+bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.FOOTER.name());
+return QuickReturnFragment.newInstance(bundle);
 case 2:
-return QuickReturnHeaderFooterFragment.newInstance();
+bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.BOTH.name());
+return QuickReturnFragment.newInstance(bundle);
+case 3:
+return QuickReturnFooterListFragment.newInstance();
 default :
-return QuickReturnHeaderFragment.newInstance();
+bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.HEADER.name());
+return QuickReturnFragment.newInstance(bundle);
 }
 }
