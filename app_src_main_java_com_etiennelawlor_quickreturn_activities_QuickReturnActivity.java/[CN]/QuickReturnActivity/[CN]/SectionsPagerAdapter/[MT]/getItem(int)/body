@@ -1,0 +1,12 @@
+{
+switch (position) {
+case 0:
+    return QuickReturnHeaderFragment.newInstance();
+case 1:
+  return QuickReturnFooterFragment.newInstance();
+case 2:
+return QuickReturnHeaderFooterFragment.newInstance();
+default :
+return QuickReturnHeaderFragment.newInstance();
+}
+}

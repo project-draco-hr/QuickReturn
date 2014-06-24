@@ -1,0 +1,4 @@
+{
+  mNotifyingScrollView=(NotifyingScrollView)view.findViewById(R.id.scroll_view);
+  mQuickReturnTextView=(TextView)view.findViewById(R.id.quick_return_tv);
+}
