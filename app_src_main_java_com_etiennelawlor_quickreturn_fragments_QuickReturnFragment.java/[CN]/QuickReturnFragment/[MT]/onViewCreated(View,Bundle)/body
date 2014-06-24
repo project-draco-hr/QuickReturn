@@ -1,6 +1,20 @@
 {
   super.onViewCreated(view,savedInstanceState);
   bindUIElements(view);
-  mNotifyingScrollView.setOnScrollChangedListener(mOnScrollChangedListener);
-  mNotifyingScrollView.setOverScrollEnabled(false);
+switch (mQuickReturnType) {
+case HEADER:
+    mQuickReturnHeaderViewVisible=false;
+  break;
+case FOOTER:
+mQuickReturnFooterViewVisible=true;
+mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
+break;
+case BOTH:
+mQuickReturnHeaderViewVisible=false;
+mQuickReturnFooterViewVisible=true;
+mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
+break;
+}
+mNotifyingScrollView.setOnScrollChangedListener(mOnScrollChangedListener);
+mNotifyingScrollView.setOverScrollEnabled(false);
 }
