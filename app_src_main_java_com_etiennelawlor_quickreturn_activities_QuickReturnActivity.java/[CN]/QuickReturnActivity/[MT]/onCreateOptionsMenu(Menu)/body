@@ -1,0 +1,4 @@
+{
+  getMenuInflater().inflate(R.menu.quick_return,menu);
+  return true;
+}

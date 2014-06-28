@@ -1,0 +1,8 @@
+{
+  int id=item.getItemId();
+  if (id == R.id.action_github) {
+    openWebPage("https://github.com/lawloretienne/QuickReturn");
+    return true;
+  }
+  return super.onOptionsItemSelected(item);
+}
