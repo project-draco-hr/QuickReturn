@@ -11,6 +11,8 @@ case 2:
 bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.BOTH.name());
 return QuickReturnFragment.newInstance(bundle);
 case 3:
+return QuickReturnHeaderListFragment.newInstance();
+case 4:
 return QuickReturnFooterListFragment.newInstance();
 default :
 bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.HEADER.name());
