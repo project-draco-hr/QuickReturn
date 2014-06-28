@@ -1,6 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_quickreturn);
+  bindService(new Intent("com.android.vending.billing.InAppBillingService.BIND"),mServiceConn,Context.BIND_AUTO_CREATE);
   final ActionBar actionBar=getActionBar();
   actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
   mSectionsPagerAdapter=new SectionsPagerAdapter(getFragmentManager());

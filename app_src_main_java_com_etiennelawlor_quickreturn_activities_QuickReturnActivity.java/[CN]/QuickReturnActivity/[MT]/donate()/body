@@ -1,0 +1,34 @@
+{
+  ArrayList<String> skuList=new ArrayList<String>();
+  skuList.add("premiumUpgrade");
+  skuList.add("gas");
+  Bundle querySkus=new Bundle();
+  querySkus.putStringArrayList("ITEM_ID_LIST",skuList);
+  try {
+    Bundle skuDetails=mService.getSkuDetails(3,getPackageName(),"inapp",querySkus);
+    int response=skuDetails.getInt("RESPONSE_CODE");
+    if (response == 0) {
+      ArrayList<String> responseList=skuDetails.getStringArrayList("DETAILS_LIST");
+      for (      String thisResponse : responseList) {
+        JSONObject object=null;
+        try {
+          object=new JSONObject(thisResponse);
+          String sku=object.getString("productId");
+          String price=object.getString("price");
+          if (sku.equals("premiumUpgrade")) {
+            Log.d(getClass().getSimpleName(),"price - " + price);
+          }
+ else           if (sku.equals("gas")) {
+            Log.d(getClass().getSimpleName(),"price - " + price);
+          }
+        }
+ catch (        JSONException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+ catch (  RemoteException e) {
+    e.printStackTrace();
+  }
+}
