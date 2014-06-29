@@ -1,0 +1,6 @@
+{
+  QuickReturnTwitterFragment fragment=new QuickReturnTwitterFragment();
+  Bundle args=new Bundle();
+  fragment.setArguments(args);
+  return fragment;
+}

@@ -3,16 +3,14 @@
   setContentView(R.layout.activity_quickreturn);
   bindService(new Intent("com.android.vending.billing.InAppBillingService.BIND"),mServiceConn,Context.BIND_AUTO_CREATE);
   final ActionBar actionBar=getActionBar();
-  actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
   mSectionsPagerAdapter=new SectionsPagerAdapter(getFragmentManager());
   mViewPager=(ViewPager)findViewById(R.id.pager);
   mViewPager.setAdapter(mSectionsPagerAdapter);
-  mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
-    @Override public void onPageSelected(    int position){
-      actionBar.setSelectedNavigationItem(position);
-    }
-  }
-);
+  final int pageMargin=(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,4,getResources().getDisplayMetrics());
+  mViewPager.setPageMargin(pageMargin);
+  mTabs=(PagerSlidingTabStrip)findViewById(R.id.tabs);
+  mTabs.setIndicatorColorResource(R.color.steel_blue);
+  mTabs.setViewPager(mViewPager);
   for (int i=0; i < mSectionsPagerAdapter.getCount(); i++) {
     actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(i)).setTabListener(this));
   }

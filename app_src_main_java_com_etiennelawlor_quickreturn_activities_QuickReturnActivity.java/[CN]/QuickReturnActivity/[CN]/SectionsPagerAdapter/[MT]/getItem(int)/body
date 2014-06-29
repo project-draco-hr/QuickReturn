@@ -2,20 +2,22 @@
   Bundle bundle=new Bundle();
 switch (position) {
 case 0:
-    bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.HEADER.name());
-  return QuickReturnFragment.newInstance(bundle);
+    return QuickReturnTwitterFragment.newInstance();
 case 1:
+  return QuickReturnFacebookFragment.newInstance();
+case 2:
+return QuickReturnHeaderListFragment.newInstance();
+case 3:
+return QuickReturnFooterListFragment.newInstance();
+case 4:
+bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.HEADER.name());
+return QuickReturnFragment.newInstance(bundle);
+case 5:
 bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.FOOTER.name());
 return QuickReturnFragment.newInstance(bundle);
-case 2:
+case 6:
 bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.BOTH.name());
 return QuickReturnFragment.newInstance(bundle);
-case 3:
-return QuickReturnHeaderListFragment.newInstance();
-case 4:
-return QuickReturnFooterListFragment.newInstance();
-case 5:
-return QuickReturnFacebookFragment.newInstance();
 default :
 bundle.putString(getString(R.string.quick_return_type),QuickReturnFragment.QuickReturnType.HEADER.name());
 return QuickReturnFragment.newInstance(bundle);

@@ -1,0 +1,7 @@
+{
+  super.onAttach(activity);
+  if (activity instanceof QuickReturnInterface) {
+    mCoordinator=(QuickReturnInterface)activity;
+  }
+ else   throw new ClassCastException("Parent container must implement the QuickReturnInterface");
+}
