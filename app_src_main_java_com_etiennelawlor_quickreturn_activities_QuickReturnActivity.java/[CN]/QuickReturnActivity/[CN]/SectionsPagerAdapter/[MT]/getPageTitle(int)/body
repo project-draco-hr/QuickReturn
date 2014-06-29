@@ -7,9 +7,11 @@ case 1:
 case 2:
 return getString(R.string.header_footer);
 case 3:
-return "Header List";
+return getString(R.string.header_list);
 case 4:
-return "Footer List";
+return getString(R.string.footer_list);
+case 5:
+return getString(R.string.facebook);
 }
 return null;
 }

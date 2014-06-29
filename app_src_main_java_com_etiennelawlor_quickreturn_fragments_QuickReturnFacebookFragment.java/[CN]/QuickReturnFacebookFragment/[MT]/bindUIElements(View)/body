@@ -1,0 +1,5 @@
+{
+  mQuickReturnListView=(QuickReturnListView)view.findViewById(android.R.id.list);
+  mQuickReturnFooterLinearLayout=(LinearLayout)view.findViewById(R.id.quick_return_footer_ll);
+  mQuickReturnHeaderTextView=(TextView)view.findViewById(R.id.quick_return_header_tv);
+}

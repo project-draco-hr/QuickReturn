@@ -1,0 +1,6 @@
+{
+  QuickReturnFacebookFragment fragment=new QuickReturnFacebookFragment();
+  Bundle args=new Bundle();
+  fragment.setArguments(args);
+  return fragment;
+}
