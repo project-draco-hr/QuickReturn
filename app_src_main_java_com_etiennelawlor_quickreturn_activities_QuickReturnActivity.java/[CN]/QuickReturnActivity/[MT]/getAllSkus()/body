@@ -1,0 +1,38 @@
+{
+  ArrayList<String> skuList=new ArrayList<String>();
+  skuList.add("buy_one_beer");
+  skuList.add("buy_two_beers");
+  skuList.add("buy_four_beers");
+  Bundle querySkus=new Bundle();
+  querySkus.putStringArrayList(GET_SKU_DETAILS_ITEM_LIST,skuList);
+  try {
+    Bundle skuDetails=mService.getSkuDetails(3,getPackageName(),ITEM_TYPE_INAPP,querySkus);
+    int response=skuDetails.getInt(RESPONSE_CODE);
+    if (response == BILLING_RESPONSE_RESULT_OK) {
+      ArrayList<String> responseList=skuDetails.getStringArrayList(RESPONSE_GET_SKU_DETAILS_LIST);
+      for (      String thisResponse : responseList) {
+        JSONObject object=null;
+        try {
+          object=new JSONObject(thisResponse);
+          String sku=object.getString("productId");
+          String price=object.getString("price");
+          if (sku.equals(getString(R.string.buy_one_beer))) {
+            Log.d(getClass().getSimpleName(),"price - " + price);
+          }
+ else           if (sku.equals(getString(R.string.buy_two_beers))) {
+            Log.d(getClass().getSimpleName(),"price - " + price);
+          }
+ else           if (sku.equals(getString(R.string.buy_four_beers))) {
+            Log.d(getClass().getSimpleName(),"price - " + price);
+          }
+        }
+ catch (        JSONException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+ catch (  RemoteException e) {
+    e.printStackTrace();
+  }
+}

@@ -4,15 +4,64 @@
 switch (resultCode) {
 case RESULT_OK:
       Log.d(getClass().getSimpleName(),"onActivityResult() : RESULT_OK");
-    responseCode=data.getIntExtra("RESPONSE_CODE",-5);
-  String purchaseData=data.getStringExtra("RESPONSE_INAPP_PURCHASE_DATA");
-String signature=data.getStringExtra("RESPONSE_INAPP_SIGNATURE");
+    responseCode=data.getIntExtra(RESPONSE_CODE,-5);
+switch (responseCode) {
+case BILLING_RESPONSE_RESULT_OK:
+    String signature=data.getStringExtra(RESPONSE_INAPP_SIGNATURE);
+  String purchaseData=data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
+JSONObject object=null;
+try {
+object=new JSONObject(purchaseData);
+String sku=object.getString("productId");
+if (!TextUtils.isEmpty(sku)) {
+  if (sku.equals(getString(R.string.buy_one_beer))) {
+    showCrouton(android.R.color.holo_green_light,getResources().getQuantityString(R.plurals.beer_cheers,1,1));
+  }
+ else   if (sku.equals(getString(R.string.buy_two_beers))) {
+    showCrouton(android.R.color.holo_green_light,getResources().getQuantityString(R.plurals.beer_cheers,2,2));
+  }
+ else   if (sku.equals(getString(R.string.buy_four_beers))) {
+    showCrouton(android.R.color.holo_green_light,getResources().getQuantityString(R.plurals.beer_cheers,4,4));
+  }
+ else   if (sku.equals("android.test.purchased")) {
+    showCrouton(android.R.color.holo_green_light,"Test Purchase completed");
+  }
+}
+}
+ catch (JSONException e) {
+e.printStackTrace();
+}
+break;
+case BILLING_RESPONSE_RESULT_USER_CANCELED:
+Log.d(getClass().getSimpleName(),"donate() : User pressed back or canceled a dialog");
+break;
+case BILLING_RESPONSE_RESULT_BILLING_UNAVAILABLE:
+Log.d(getClass().getSimpleName(),"donate() : Billing API version is not supported for the type requested");
+break;
+case BILLING_RESPONSE_RESULT_ITEM_UNAVAILABLE:
+Log.d(getClass().getSimpleName(),"donate() : Requested product is not available for purchase");
+break;
+case BILLING_RESPONSE_RESULT_DEVELOPER_ERROR:
+Log.d(getClass().getSimpleName(),"donate() : Invalid arguments provided to the API. This error can also " + "indicate that the application was not correctly signed or properly set up for In-app Billing in " + "Google Play, or does not have the necessary permissions in its manifest");
+break;
+case BILLING_RESPONSE_RESULT_ERROR:
+Log.d(getClass().getSimpleName(),"donate() : Fatal error during the API action");
+break;
+case BILLING_RESPONSE_RESULT_ITEM_ALREADY_OWNED:
+Log.d(getClass().getSimpleName(),"donate() : Failure to purchase since item is already owned");
+showCrouton(android.R.color.holo_red_light,R.string.item_already_owned);
+break;
+case BILLING_RESPONSE_RESULT_ITEM_NOT_OWNED:
+Log.d(getClass().getSimpleName(),"donate() : Failure to consume since item is not owned");
+break;
+default :
+break;
+}
 break;
 case RESULT_CANCELED:
 Log.d(getClass().getSimpleName(),"onActivityResult() : RESULT_CANCELED");
-responseCode=data.getIntExtra("RESPONSE_CODE",-5);
-Style croutonStyle=new Style.Builder().setHeight(QuickReturnUtils.dp2px(this,50)).setGravity(Gravity.CENTER).setBackgroundColor(R.color.steel_blue).build();
-Crouton.makeText(this,R.string.result_canceled,croutonStyle).setConfiguration(new Configuration.Builder().setDuration(Configuration.DURATION_SHORT).setInAnimation(R.anim.crouton_in_delayed).setOutAnimation(R.anim.crouton_out).build()).show();
+responseCode=data.getIntExtra(RESPONSE_CODE,-5);
+showCrouton(android.R.color.holo_red_light,R.string.beer_order_canceled);
 break;
 default :
 break;

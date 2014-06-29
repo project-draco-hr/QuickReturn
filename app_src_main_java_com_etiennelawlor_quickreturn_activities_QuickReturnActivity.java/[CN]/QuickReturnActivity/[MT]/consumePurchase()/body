@@ -1,0 +1,10 @@
+{
+  String token="inapp:com.etiennelawlor.quickreturn:android.test.purchased";
+  try {
+    int response=mService.consumePurchase(3,getPackageName(),token);
+    Log.d(getClass().getSimpleName(),"consumePurchase() : response - " + response);
+  }
+ catch (  RemoteException e) {
+    e.printStackTrace();
+  }
+}

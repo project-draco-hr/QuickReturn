@@ -1,0 +1,4 @@
+{
+  Style croutonStyle=new Style.Builder().setHeight(QuickReturnUtils.dp2px(this,50)).setGravity(Gravity.CENTER).setBackgroundColor(colorRes).build();
+  Crouton.makeText(this,messageRes,croutonStyle).setConfiguration(new Configuration.Builder().setDuration(Configuration.DURATION_SHORT).setInAnimation(R.anim.crouton_in_delayed).setOutAnimation(R.anim.crouton_out).build()).show();
+}

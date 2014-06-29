@@ -1,0 +1,15 @@
+{
+  try {
+    Bundle purchases=mService.getPurchases(3,getPackageName(),ITEM_TYPE_INAPP,INAPP_CONTINUATION_TOKEN);
+    if (purchases.getInt(RESPONSE_CODE) == BILLING_RESPONSE_RESULT_OK) {
+      ArrayList mySkus, myPurchases, mySignatures;
+      mySkus=purchases.getStringArrayList(RESPONSE_INAPP_ITEM_LIST);
+      myPurchases=purchases.getStringArrayList(RESPONSE_INAPP_PURCHASE_DATA_LIST);
+      mySignatures=purchases.getStringArrayList(RESPONSE_INAPP_PURCHASE_SIGNATURE_LIST);
+      Log.d(getClass().getSimpleName(),"getAllPurchases() : purchases");
+    }
+  }
+ catch (  RemoteException e) {
+    e.printStackTrace();
+  }
+}
