@@ -4,8 +4,14 @@ switch (id) {
 case R.id.action_github:
     openWebPage("https://github.com/lawloretienne/QuickReturn");
   return true;
-case R.id.action_donate:
-donate();
+case R.id.buy_one_beer:
+donate(getString(R.string.buy_one_beer));
+return true;
+case R.id.buy_two_beers:
+donate(getString(R.string.buy_two_beers));
+return true;
+case R.id.buy_four_beers:
+donate(getString(R.string.buy_four_beers));
 return true;
 default :
 break;

@@ -32,7 +32,7 @@
       }
     }
     String developerPayload="bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ";
-    Bundle bundle=mService.getBuyIntent(3,getPackageName(),"buy_two_beer",ITEM_TYPE_INAPP,developerPayload);
+    Bundle bundle=mService.getBuyIntent(3,getPackageName(),productSku,ITEM_TYPE_INAPP,developerPayload);
     PendingIntent pendingIntent=bundle.getParcelable("BUY_INTENT");
     if (bundle.getInt("RESPONSE_CODE") == BILLING_RESPONSE_RESULT_OK) {
       startIntentSenderForResult(pendingIntent.getIntentSender(),BUY_REQUEST_CODE,new Intent(),Integer.valueOf(0),Integer.valueOf(0),Integer.valueOf(0));
