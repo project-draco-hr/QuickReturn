@@ -1,0 +1,21 @@
+{
+  if (requestCode == BUY_REQUEST_CODE) {
+    int responseCode;
+switch (resultCode) {
+case RESULT_OK:
+      Log.d(getClass().getSimpleName(),"onActivityResult() : RESULT_OK");
+    responseCode=data.getIntExtra("RESPONSE_CODE",-5);
+  String purchaseData=data.getStringExtra("RESPONSE_INAPP_PURCHASE_DATA");
+String signature=data.getStringExtra("RESPONSE_INAPP_SIGNATURE");
+break;
+case RESULT_CANCELED:
+Log.d(getClass().getSimpleName(),"onActivityResult() : RESULT_CANCELED");
+responseCode=data.getIntExtra("RESPONSE_CODE",-5);
+Style croutonStyle=new Style.Builder().setHeight(QuickReturnUtils.dp2px(this,50)).setGravity(Gravity.CENTER).setBackgroundColor(R.color.steel_blue).build();
+Crouton.makeText(this,R.string.result_canceled,croutonStyle).setConfiguration(new Configuration.Builder().setDuration(Configuration.DURATION_SHORT).setInAnimation(R.anim.crouton_in_delayed).setOutAnimation(R.anim.crouton_out).build()).show();
+break;
+default :
+break;
+}
+}
+}
