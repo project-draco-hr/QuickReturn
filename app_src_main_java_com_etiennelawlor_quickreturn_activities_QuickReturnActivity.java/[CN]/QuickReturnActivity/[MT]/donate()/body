@@ -1,13 +1,14 @@
 {
   ArrayList<String> skuList=new ArrayList<String>();
-  skuList.add("premiumUpgrade");
-  skuList.add("gas");
+  skuList.add("buy_one_beer");
+  skuList.add("buy_two_beers");
+  skuList.add("buy_four_beers");
   Bundle querySkus=new Bundle();
   querySkus.putStringArrayList("ITEM_ID_LIST",skuList);
   try {
-    Bundle skuDetails=mService.getSkuDetails(3,getPackageName(),"inapp",querySkus);
+    Bundle skuDetails=mService.getSkuDetails(3,getPackageName(),ITEM_TYPE_INAPP,querySkus);
     int response=skuDetails.getInt("RESPONSE_CODE");
-    if (response == 0) {
+    if (response == BILLING_RESPONSE_RESULT_OK) {
       ArrayList<String> responseList=skuDetails.getStringArrayList("DETAILS_LIST");
       for (      String thisResponse : responseList) {
         JSONObject object=null;
@@ -15,10 +16,13 @@
           object=new JSONObject(thisResponse);
           String sku=object.getString("productId");
           String price=object.getString("price");
-          if (sku.equals("premiumUpgrade")) {
+          if (sku.equals("buy_one_beer")) {
             Log.d(getClass().getSimpleName(),"price - " + price);
           }
- else           if (sku.equals("gas")) {
+ else           if (sku.equals("buy_two_beers")) {
+            Log.d(getClass().getSimpleName(),"price - " + price);
+          }
+ else           if (sku.equals("buy_four_beers")) {
             Log.d(getClass().getSimpleName(),"price - " + price);
           }
         }
@@ -27,8 +31,17 @@
         }
       }
     }
+    String developerPayload="bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ";
+    Bundle bundle=mService.getBuyIntent(3,getPackageName(),"buy_two_beer",ITEM_TYPE_INAPP,developerPayload);
+    PendingIntent pendingIntent=bundle.getParcelable("BUY_INTENT");
+    if (bundle.getInt("RESPONSE_CODE") == BILLING_RESPONSE_RESULT_OK) {
+      startIntentSenderForResult(pendingIntent.getIntentSender(),BUY_REQUEST_CODE,new Intent(),Integer.valueOf(0),Integer.valueOf(0),Integer.valueOf(0));
+    }
   }
  catch (  RemoteException e) {
+    e.printStackTrace();
+  }
+catch (  IntentSender.SendIntentException e) {
     e.printStackTrace();
   }
 }
