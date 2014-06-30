@@ -1,0 +1,6 @@
+{
+  mTwitterTextView=(TextView)findViewById(R.id.twitter_tv);
+  mFacebookTextView=(TextView)findViewById(R.id.facebook_tv);
+  mListViewTextView=(TextView)findViewById(R.id.listview_tv);
+  mScrollViewTextView=(TextView)findViewById(R.id.scrollview_tv);
+}

@@ -1,0 +1,9 @@
+{
+switch (position) {
+case 0:
+    return getString(R.string.header_list);
+case 1:
+  return getString(R.string.footer_list);
+}
+return null;
+}

@@ -1,0 +1,13 @@
+{
+  Bundle bundle=new Bundle();
+switch (position) {
+case 0:
+    return QuickReturnTwitterFragment.newInstance();
+case 1:
+  return QuickReturnTwitterFragment.newInstance();
+case 2:
+return QuickReturnTwitterFragment.newInstance();
+default :
+return QuickReturnTwitterFragment.newInstance();
+}
+}

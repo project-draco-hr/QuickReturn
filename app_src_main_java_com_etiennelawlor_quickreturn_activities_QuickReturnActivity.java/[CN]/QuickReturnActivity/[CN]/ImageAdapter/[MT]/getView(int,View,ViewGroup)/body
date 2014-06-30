@@ -1,0 +1,13 @@
+{
+  TextView textView;
+  if (convertView == null) {
+    textView=new TextView(mContext);
+    textView.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.MATCH_PARENT,GridView.LayoutParams.MATCH_PARENT));
+    textView.setPadding(8,8,8,8);
+  }
+ else {
+    textView=(TextView)convertView;
+  }
+  textView.setText("Facebook");
+  return textView;
+}

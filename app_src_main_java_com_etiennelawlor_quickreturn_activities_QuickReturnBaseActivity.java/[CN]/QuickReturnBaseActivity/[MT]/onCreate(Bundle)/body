@@ -1,0 +1,4 @@
+{
+  super.onCreate(savedInstanceState);
+  bindService(new Intent("com.android.vending.billing.InAppBillingService.BIND"),mServiceConn,Context.BIND_AUTO_CREATE);
+}

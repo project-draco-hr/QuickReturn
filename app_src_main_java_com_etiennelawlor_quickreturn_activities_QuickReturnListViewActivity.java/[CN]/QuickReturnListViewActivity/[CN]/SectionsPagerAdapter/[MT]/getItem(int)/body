@@ -1,0 +1,10 @@
+{
+switch (position) {
+case 0:
+    return QuickReturnHeaderListFragment.newInstance();
+case 1:
+  return QuickReturnFooterListFragment.newInstance();
+default :
+return QuickReturnHeaderListFragment.newInstance();
+}
+}

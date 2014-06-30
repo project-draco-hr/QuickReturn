@@ -1,0 +1,11 @@
+{
+switch (position) {
+case 0:
+    return getString(R.string.header);
+case 1:
+  return getString(R.string.footer);
+case 2:
+return getString(R.string.header_footer);
+}
+return null;
+}

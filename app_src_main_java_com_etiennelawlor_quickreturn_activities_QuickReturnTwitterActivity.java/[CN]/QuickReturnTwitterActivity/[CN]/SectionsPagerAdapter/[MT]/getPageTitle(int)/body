@@ -1,0 +1,11 @@
+{
+switch (position) {
+case 0:
+    return getString(R.string.home);
+case 1:
+  return getString(R.string.discover);
+case 2:
+return getString(R.string.activity);
+}
+return null;
+}

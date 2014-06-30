@@ -1,0 +1,16 @@
+{
+switch (position) {
+case 0:
+    return QuickReturnFacebookFragment.newInstance();
+case 1:
+  return QuickReturnFacebookFragment.newInstance();
+case 2:
+return QuickReturnFacebookFragment.newInstance();
+case 3:
+return QuickReturnFacebookFragment.newInstance();
+case 4:
+return QuickReturnFacebookFragment.newInstance();
+default :
+return QuickReturnFacebookFragment.newInstance();
+}
+}
