@@ -5,7 +5,7 @@ case 0:
 case 1:
   return getString(R.string.footer);
 case 2:
-return getString(R.string.header_footer);
+return getString(R.string.both);
 }
 return null;
 }
