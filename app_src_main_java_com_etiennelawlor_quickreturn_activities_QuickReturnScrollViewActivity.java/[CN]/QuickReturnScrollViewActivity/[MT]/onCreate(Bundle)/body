@@ -1,16 +1,18 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_quick_return_scrollview);
-  final ActionBar actionBar=getActionBar();
+  bindUIElements();
   mSectionsPagerAdapter=new SectionsPagerAdapter(getFragmentManager());
-  mViewPager=(ViewPager)findViewById(R.id.pager);
   mViewPager.setAdapter(mSectionsPagerAdapter);
-  final int pageMargin=(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,4,getResources().getDisplayMetrics());
-  mViewPager.setPageMargin(pageMargin);
-  mTabs=(PagerSlidingTabStrip)findViewById(R.id.tabs);
   mTabs.setAllCaps(false);
   mTabs.setShouldExpand(true);
   mTabs.setTextSize(QuickReturnUtils.dp2px(this,16));
+  mTabs.setTabBackground(R.drawable.selector_bg_tab);
   mTabs.setIndicatorColorResource(R.color.steel_blue);
+  mTabs.setTextColor(getResources().getColor(android.R.color.darker_gray));
+  mTabs.setOnPageChangeListener(mTabsOnPageChangeListener);
   mTabs.setViewPager(mViewPager);
+  mTabsLinearLayout=((LinearLayout)mTabs.getChildAt(0));
+  TextView tv=(TextView)mTabsLinearLayout.getChildAt(0);
+  tv.setTextColor(getResources().getColor(R.color.steel_blue));
 }

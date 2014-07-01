@@ -1,0 +1,4 @@
+{
+  mViewPager=(ViewPager)findViewById(R.id.pager);
+  mTabs=(PagerSlidingTabStrip)findViewById(R.id.tabs);
+}
