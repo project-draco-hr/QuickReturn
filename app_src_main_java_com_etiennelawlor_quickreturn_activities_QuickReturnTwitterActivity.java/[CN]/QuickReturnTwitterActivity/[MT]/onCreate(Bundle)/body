@@ -9,6 +9,7 @@
   mTabs.setTextSize(QuickReturnUtils.dp2px(this,16));
   mTabs.setTabBackground(R.drawable.selector_bg_tab);
   mTabs.setIndicatorColorResource(R.color.steel_blue);
+  mTabs.setIndicatorHeight(QuickReturnUtils.dp2px(this,5));
   mTabs.setOnPageChangeListener(mTabsOnPageChangeListener);
   mTabs.setViewPager(mViewPager);
   mTabsLinearLayout=((LinearLayout)mTabs.getChildAt(0));
