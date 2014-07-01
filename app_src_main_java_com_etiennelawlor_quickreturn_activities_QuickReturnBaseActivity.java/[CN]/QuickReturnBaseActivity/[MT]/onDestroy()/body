@@ -1,4 +1,7 @@
 {
   super.onDestroy();
+  if (mService != null) {
+    unbindService(mServiceConn);
+  }
   Crouton.cancelAllCroutons();
 }
