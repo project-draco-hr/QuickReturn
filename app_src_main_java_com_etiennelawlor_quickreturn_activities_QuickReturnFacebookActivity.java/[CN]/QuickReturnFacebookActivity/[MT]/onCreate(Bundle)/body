@@ -9,5 +9,9 @@
   mTabs.setIndicatorColorResource(R.color.steel_blue);
   mTabs.setIndicatorHeight(QuickReturnUtils.dp2px(this,5));
   mTabs.setDividerColor(getResources().getColor(android.R.color.transparent));
+  mTabs.setOnPageChangeListener(mTabsOnPageChangeListener);
   mTabs.setViewPager(mViewPager);
+  mTabsLinearLayout=((LinearLayout)mTabs.getChildAt(0));
+  ImageButton ib=(ImageButton)mTabsLinearLayout.getChildAt(0);
+  ib.setImageResource(R.drawable.ic_action_event_highlighted);
 }

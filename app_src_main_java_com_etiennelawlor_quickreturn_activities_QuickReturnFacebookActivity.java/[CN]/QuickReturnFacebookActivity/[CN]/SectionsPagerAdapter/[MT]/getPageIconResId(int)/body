@@ -1,15 +1,15 @@
 {
 switch (position) {
 case 0:
-    return R.drawable.ic_action_github;
+    return R.drawable.ic_action_event;
 case 1:
   return R.drawable.ic_action_cc_bcc;
 case 2:
-return android.R.drawable.sym_action_chat;
+return R.drawable.ic_action_chat;
 case 3:
 return R.drawable.ic_action_web_site;
 case 4:
-return R.drawable.ic_action_github;
+return R.drawable.ic_action_sort_by_size;
 }
 return 0;
 }
