@@ -1,6 +1,4 @@
 {
   View rootView=inflater.inflate(R.layout.fragment_quick_return_twitter,container,false);
-  mHeader=inflater.inflate(R.layout.header,null);
-  mPlaceHolder=mHeader.findViewById(R.id.placeholder);
   return rootView;
 }

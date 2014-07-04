@@ -1,0 +1,5 @@
+{
+  QuickReturnTwitterFragment fragment=new QuickReturnTwitterFragment();
+  fragment.setArguments(extras);
+  return fragment;
+}

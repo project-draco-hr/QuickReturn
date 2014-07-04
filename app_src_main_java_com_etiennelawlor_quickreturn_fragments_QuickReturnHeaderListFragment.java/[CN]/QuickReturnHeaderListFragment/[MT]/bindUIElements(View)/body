@@ -1,4 +1,4 @@
 {
-  mQuickReturnListView=(QuickReturnListView)view.findViewById(android.R.id.list);
+  mListView=(ListView)view.findViewById(android.R.id.list);
   mQuickReturnTextView=(TextView)view.findViewById(R.id.quick_return_tv);
 }

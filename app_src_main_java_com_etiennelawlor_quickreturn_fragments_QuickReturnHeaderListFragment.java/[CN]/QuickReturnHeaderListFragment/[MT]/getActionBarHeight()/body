@@ -1,0 +1,8 @@
+{
+  if (mActionBarHeight != 0) {
+    return mActionBarHeight;
+  }
+  getActivity().getTheme().resolveAttribute(android.R.attr.actionBarSize,mTypedValue,true);
+  mActionBarHeight=TypedValue.complexToDimensionPixelSize(mTypedValue.data,getResources().getDisplayMetrics());
+  return mActionBarHeight;
+}

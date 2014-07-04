@@ -1,5 +1,4 @@
 {
-  Bundle bundle=new Bundle();
 switch (position) {
 case 0:
     return QuickReturnTwitterFragment.newInstance();
