@@ -1,5 +1,5 @@
 {
   super.onCreate(savedInstanceState);
   mHeaderHeight=getResources().getDimensionPixelSize(R.dimen.header_height);
-  mMinHeaderTranslation=-(mHeaderHeight * 2) + getActionBarHeight();
+  mMinHeaderTranslation=-(mHeaderHeight * 2) + QuickReturnUtils.getActionBarHeight(getActivity());
 }
