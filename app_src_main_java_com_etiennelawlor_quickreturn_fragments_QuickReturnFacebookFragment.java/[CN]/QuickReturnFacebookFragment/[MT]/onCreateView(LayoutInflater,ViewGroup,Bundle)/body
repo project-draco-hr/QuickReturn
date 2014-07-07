@@ -1,4 +1,5 @@
 {
-  View rootView=inflater.inflate(R.layout.fragment_quick_return_facebook,container,false);
-  return rootView;
+  View view=inflater.inflate(R.layout.fragment_quick_return_facebook,container,false);
+  ButterKnife.inject(this,view);
+  return view;
 }

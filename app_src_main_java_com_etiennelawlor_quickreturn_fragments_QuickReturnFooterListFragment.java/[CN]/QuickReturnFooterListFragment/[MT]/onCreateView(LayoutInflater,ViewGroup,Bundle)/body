@@ -1,4 +1,5 @@
 {
-  View rootView=inflater.inflate(R.layout.fragment_list_quick_return_footer,container,false);
-  return rootView;
+  View view=inflater.inflate(R.layout.fragment_list_quick_return_footer,container,false);
+  ButterKnife.inject(this,view);
+  return view;
 }

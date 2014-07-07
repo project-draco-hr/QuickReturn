@@ -1,6 +1,5 @@
 {
   super.onViewCreated(view,savedInstanceState);
-  bindUIElements(view);
 switch (mQuickReturnType) {
 case HEADER:
     mQuickReturnHeaderViewVisible=false;

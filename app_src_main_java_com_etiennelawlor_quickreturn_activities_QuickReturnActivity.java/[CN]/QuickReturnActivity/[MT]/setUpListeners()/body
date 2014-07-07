@@ -1,6 +1,0 @@
-{
-  mTwitterTextView.setOnClickListener(mTwitterTextViewOnClickListener);
-  mFacebookTextView.setOnClickListener(mFacebookTextViewOnClickListener);
-  mListViewTextView.setOnClickListener(mListViewTextViewOnClickListener);
-  mScrollViewTextView.setOnClickListener(mScrollViewTextViewOnClickListener);
-}

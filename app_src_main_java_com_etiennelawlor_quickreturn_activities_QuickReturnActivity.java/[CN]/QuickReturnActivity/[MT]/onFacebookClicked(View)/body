@@ -1,0 +1,3 @@
+{
+  startActivity(new Intent(QuickReturnActivity.this,QuickReturnFacebookActivity.class));
+}

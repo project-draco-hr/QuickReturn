@@ -1,6 +1,5 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_quickreturn);
-  bindUIElements();
-  setUpListeners();
+  ButterKnife.inject(this);
 }
