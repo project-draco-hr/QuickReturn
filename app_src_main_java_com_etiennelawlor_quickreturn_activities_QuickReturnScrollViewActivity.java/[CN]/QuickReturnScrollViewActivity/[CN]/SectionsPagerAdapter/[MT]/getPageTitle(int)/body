@@ -6,6 +6,12 @@ case 1:
   return getString(R.string.footer);
 case 2:
 return getString(R.string.both);
+case 3:
+return getString(R.string.header);
+case 4:
+return getString(R.string.footer);
+case 5:
+return getString(R.string.both);
 }
 return null;
 }

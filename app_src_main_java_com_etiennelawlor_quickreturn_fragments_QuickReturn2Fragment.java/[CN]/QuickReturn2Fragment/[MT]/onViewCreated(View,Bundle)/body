@@ -1,0 +1,21 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+switch (mQuickReturnType) {
+case HEADER:
+    mQuickReturnHeaderViewVisible=false;
+  mQuickReturnHeaderTextView.setVisibility(View.VISIBLE);
+break;
+case FOOTER:
+mQuickReturnFooterViewVisible=true;
+mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
+break;
+case BOTH:
+mQuickReturnHeaderViewVisible=false;
+mQuickReturnFooterViewVisible=true;
+mQuickReturnHeaderTextView.setVisibility(View.VISIBLE);
+mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
+break;
+}
+mNotifyingScrollView.setOnScrollChangedListener(mOnScrollChangedListener);
+mNotifyingScrollView.setOverScrollEnabled(false);
+}

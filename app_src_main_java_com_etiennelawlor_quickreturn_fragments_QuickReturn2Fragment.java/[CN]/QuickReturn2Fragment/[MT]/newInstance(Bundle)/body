@@ -1,0 +1,6 @@
+{
+  QuickReturn2Fragment fragment=new QuickReturn2Fragment();
+  fragment.setRetainInstance(true);
+  fragment.setArguments(extras);
+  return fragment;
+}

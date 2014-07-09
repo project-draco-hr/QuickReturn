@@ -1,0 +1,10 @@
+{
+  super.onCreate(savedInstanceState);
+  if (getArguments() != null) {
+    mQuickReturnType=QuickReturnScrollViewActivity.QuickReturnType.valueOf(getArguments().getString("QUICK_RETURN_TYPE"));
+  }
+  mHeaderHeight=getResources().getDimensionPixelSize(R.dimen.header_height2);
+  mMinHeaderTranslation=-(mHeaderHeight);
+  mFooterHeight=getResources().getDimensionPixelSize(R.dimen.footer_height);
+  mMinFooterTranslation=mFooterHeight;
+}
