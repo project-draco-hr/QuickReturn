@@ -3,5 +3,6 @@
   mValues=getResources().getStringArray(R.array.countries);
   ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.list_item,R.id.item_tv,mValues);
   mListView.setAdapter(adapter);
-  mListView.setOnScrollListener(mListViewOnScrollListener);
+  int headerHeight=getActivity().getResources().getDimensionPixelSize(R.dimen.header_height2);
+  mListView.setOnScrollListener(new QuickReturnListViewOnScrollListener(QuickReturnType.HEADER,mQuickReturnTextView,headerHeight));
 }

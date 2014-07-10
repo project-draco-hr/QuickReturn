@@ -1,0 +1,15 @@
+{
+  mQuickReturnType=quickReturnType;
+switch (mQuickReturnType) {
+case HEADER:
+    mMinHeaderTranslation=-viewHeight;
+  mHeader=view;
+break;
+case FOOTER:
+mMinFooterTranslation=viewHeight;
+mFooter=view;
+break;
+default :
+break;
+}
+}

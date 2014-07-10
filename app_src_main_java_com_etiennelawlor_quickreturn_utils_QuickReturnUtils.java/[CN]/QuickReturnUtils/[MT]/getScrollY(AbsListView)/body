@@ -1,0 +1,10 @@
+{
+  View c=lv.getChildAt(0);
+  if (c == null) {
+    return 0;
+  }
+  int firstVisiblePosition=lv.getFirstVisiblePosition();
+  int top=c.getTop();
+  int scrollY=-top + firstVisiblePosition * c.getHeight();
+  return scrollY;
+}

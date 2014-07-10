@@ -1,5 +1,3 @@
 {
   super.onCreate(savedInstanceState);
-  mFooterHeight=getResources().getDimensionPixelSize(R.dimen.footer_height);
-  mMinFooterTranslation=mFooterHeight;
 }
