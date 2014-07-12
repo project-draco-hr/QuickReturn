@@ -2,10 +2,10 @@
   mQuickReturnType=quickReturnType;
 switch (mQuickReturnType) {
 case BOTH:
-    mMinHeaderTranslation=-headerViewHeight;
-  mHeader=headerView;
-mMinFooterTranslation=footerViewHeight;
+    mHeader=headerView;
+  mMinHeaderTranslation=headerTranslation;
 mFooter=footerView;
+mMinFooterTranslation=footerTranslation;
 default :
 break;
 }

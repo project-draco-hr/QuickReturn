@@ -1,5 +1,5 @@
 QuickReturnType quickReturnType
 View headerView
-int headerViewHeight
+int headerTranslation
 View footerView
-int footerViewHeight
+int footerTranslation

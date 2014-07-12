@@ -1,6 +1,10 @@
 {
   super.onViewCreated(view,savedInstanceState);
-  mListView.setOnScrollListener(mListViewOnScrollListener);
+  int headerHeight=getResources().getDimensionPixelSize(R.dimen.header_height);
+  int indicatorHeight=QuickReturnUtils.dp2px(getActivity(),5);
+  int headerTranslation=-headerHeight + QuickReturnUtils.getActionBarHeight(getActivity()) + indicatorHeight;
+  int footerTranslation=-headerHeight + QuickReturnUtils.getActionBarHeight(getActivity());
+  mListView.setOnScrollListener(new QuickReturnListViewOnScrollListener(QuickReturnType.BOTH,mCoordinator.getTabs(),headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation));
   mPlaceHolderView=getActivity().getLayoutInflater().inflate(R.layout.view_header_placeholder,mListView,false);
   mListView.addHeaderView(mPlaceHolderView);
   mValues=getResources().getStringArray(R.array.countries);

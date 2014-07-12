@@ -1,7 +1,3 @@
 {
   super.onCreate(savedInstanceState);
-  mHeaderHeight=getResources().getDimensionPixelSize(R.dimen.header_height);
-  int indicatorHeight=QuickReturnUtils.dp2px(getActivity(),5);
-  mMinHeaderTranslation=-mHeaderHeight + QuickReturnUtils.getActionBarHeight(getActivity()) + indicatorHeight;
-  mMinFooterTranslation=-mHeaderHeight + QuickReturnUtils.getActionBarHeight(getActivity());
 }
