@@ -4,5 +4,5 @@
   ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.list_item,R.id.item_tv,mValues);
   mListView.setAdapter(adapter);
   int headerHeight=getActivity().getResources().getDimensionPixelSize(R.dimen.header_height2);
-  mListView.setOnScrollListener(new QuickReturnListViewOnScrollListener(QuickReturnType.HEADER,mQuickReturnTextView,-headerHeight));
+  mListView.setOnScrollListener(new QuickReturnListViewOnScrollListener(QuickReturnType.HEADER,mQuickReturnTextView,-headerHeight,null,0));
 }
