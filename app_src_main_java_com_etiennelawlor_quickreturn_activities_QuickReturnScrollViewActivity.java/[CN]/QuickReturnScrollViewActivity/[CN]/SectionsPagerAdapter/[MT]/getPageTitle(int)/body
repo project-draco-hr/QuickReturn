@@ -1,17 +1,17 @@
 {
 switch (position) {
 case 0:
-    return getString(R.string.header);
+    return getString(R.string.header_one);
 case 1:
-  return getString(R.string.footer);
+  return getString(R.string.header_two);
 case 2:
-return getString(R.string.both);
+return getString(R.string.footer_one);
 case 3:
-return getString(R.string.header);
+return getString(R.string.footer_two);
 case 4:
-return getString(R.string.footer);
+return getString(R.string.both_one);
 case 5:
-return getString(R.string.both);
+return getString(R.string.both_two);
 }
 return null;
 }
