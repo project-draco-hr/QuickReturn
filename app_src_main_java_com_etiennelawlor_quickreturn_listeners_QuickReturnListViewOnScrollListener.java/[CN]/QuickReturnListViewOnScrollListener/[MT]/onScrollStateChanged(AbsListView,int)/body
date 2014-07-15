@@ -1,2 +1,15 @@
 {
+  if (scrollState == SCROLL_STATE_IDLE) {
+    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : mPrevScrollY - " + mPrevScrollY);
+    int midHeader=-mMinHeaderTranslation / 2;
+    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : midHeader - " + midHeader);
+    if (mPrevScrollY < midHeader) {
+      Log.d(getClass().getSimpleName(),"onScrollStateChanged() : slide header down");
+    }
+ else     if (mPrevScrollY < -mMinHeaderTranslation && mPrevScrollY >= midHeader) {
+      Log.d(getClass().getSimpleName(),"onScrollStateChanged() : slide header up");
+    }
+    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : mMinHeaderTranslation - " + mMinHeaderTranslation);
+    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : mMinFooterTranslation - " + mMinFooterTranslation);
+  }
 }
