@@ -1,5 +1,5 @@
 {
-  QuickReturn2Fragment fragment=new QuickReturn2Fragment();
+  SpeedyQuickReturnFragment fragment=new SpeedyQuickReturnFragment();
   fragment.setRetainInstance(true);
   fragment.setArguments(extras);
   return fragment;

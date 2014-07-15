@@ -1,6 +1,0 @@
-{
-  super.onCreate(savedInstanceState);
-  if (getArguments() != null) {
-    mQuickReturnType=QuickReturnScrollViewActivity.QuickReturnType.valueOf(getArguments().getString("QUICK_RETURN_TYPE"));
-  }
-}

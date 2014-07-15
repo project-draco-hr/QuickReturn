@@ -1,0 +1,17 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+switch (mQuickReturnType) {
+case HEADER:
+    mNotifyingScrollView.setOnScrollChangedListener(new SpeedyQuickReturnScrollViewOnScrollChangedListener(getActivity(),QuickReturnType.HEADER,mQuickReturnHeaderTextView,null));
+  break;
+case FOOTER:
+mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
+mNotifyingScrollView.setOnScrollChangedListener(new SpeedyQuickReturnScrollViewOnScrollChangedListener(getActivity(),QuickReturnType.FOOTER,null,mQuickReturnFooterTextView));
+break;
+case BOTH:
+mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
+mNotifyingScrollView.setOnScrollChangedListener(new SpeedyQuickReturnScrollViewOnScrollChangedListener(getActivity(),QuickReturnType.BOTH,mQuickReturnHeaderTextView,mQuickReturnFooterTextView));
+break;
+}
+mNotifyingScrollView.setOverScrollEnabled(false);
+}
