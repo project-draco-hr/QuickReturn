@@ -1,0 +1,7 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  mValues=getResources().getStringArray(R.array.countries);
+  ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.list_item,R.id.item_tv,mValues);
+  mListView.setAdapter(adapter);
+  mListView.setOnScrollListener(new SpeedyQuickReturnListViewOnScrollListener(getActivity(),QuickReturnType.HEADER,mQuickReturnTextView,null));
+}

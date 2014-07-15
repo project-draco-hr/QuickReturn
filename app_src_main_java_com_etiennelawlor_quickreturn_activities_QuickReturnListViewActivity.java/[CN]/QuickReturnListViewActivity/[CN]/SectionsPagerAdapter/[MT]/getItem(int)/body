@@ -3,7 +3,11 @@ switch (position) {
 case 0:
     return QuickReturnHeaderListFragment.newInstance();
 case 1:
-  return QuickReturnFooterListFragment.newInstance();
+  return QuickReturnHeaderListFragment2.newInstance();
+case 2:
+return QuickReturnFooterListFragment.newInstance();
+case 3:
+return QuickReturnFooterListFragment2.newInstance();
 default :
 return QuickReturnHeaderListFragment.newInstance();
 }

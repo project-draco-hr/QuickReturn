@@ -1,5 +1,7 @@
 {
-  if (t < oldt) {
+  int scrollY=QuickReturnUtils.getScrollY(listview);
+  int diff=mPrevScrollY - scrollY;
+  if (diff > 0) {
 switch (mQuickReturnType) {
 case HEADER:
       if (mHeader.getVisibility() == View.GONE) {
@@ -25,7 +27,7 @@ mFooter.startAnimation(mSlideFooterUpAnimation);
 break;
 }
 }
- else if (t > oldt) {
+ else if (diff < 0) {
 switch (mQuickReturnType) {
 case HEADER:
 if (mHeader.getVisibility() == View.VISIBLE) {
@@ -51,4 +53,5 @@ mFooter.startAnimation(mSlideFooterDownAnimation);
 break;
 }
 }
+mPrevScrollY=scrollY;
 }

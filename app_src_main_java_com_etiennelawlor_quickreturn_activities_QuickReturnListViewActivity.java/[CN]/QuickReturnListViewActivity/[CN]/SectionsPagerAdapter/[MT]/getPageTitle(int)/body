@@ -1,9 +1,13 @@
 {
 switch (position) {
 case 0:
-    return getString(R.string.header);
+    return "QRHeader";
 case 1:
-  return getString(R.string.footer);
+  return "SpeedyQRHeader";
+case 2:
+return "QRFooter";
+case 3:
+return "SpeedyQRFooter";
 }
 return null;
 }
