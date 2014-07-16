@@ -1,4 +1,5 @@
 {
+  Log.d(getClass().getSimpleName(),"onScrollStateChanged() : scrollState - " + scrollState);
   if (scrollState == SCROLL_STATE_IDLE) {
     int midHeader=-mMinHeaderTranslation / 2;
     int midFooter=mMinFooterTranslation / 2;
