@@ -1,15 +1,46 @@
 {
   if (scrollState == SCROLL_STATE_IDLE) {
-    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : mPrevScrollY - " + mPrevScrollY);
     int midHeader=-mMinHeaderTranslation / 2;
-    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : midHeader - " + midHeader);
-    if (mPrevScrollY < midHeader) {
-      Log.d(getClass().getSimpleName(),"onScrollStateChanged() : slide header down");
-    }
- else     if (mPrevScrollY < -mMinHeaderTranslation && mPrevScrollY >= midHeader) {
-      Log.d(getClass().getSimpleName(),"onScrollStateChanged() : slide header up");
-    }
-    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : mMinHeaderTranslation - " + mMinHeaderTranslation);
-    Log.d(getClass().getSimpleName(),"onScrollStateChanged() : IDLE : mMinFooterTranslation - " + mMinFooterTranslation);
+    int midFooter=mMinFooterTranslation / 2;
+switch (mQuickReturnType) {
+case HEADER:
+      if (-mHeaderDiffTotal > 0 && -mHeaderDiffTotal < midHeader) {
+        mHeader.setTranslationY(0);
+        mHeaderDiffTotal=0;
+      }
+ else       if (-mHeaderDiffTotal < -mMinHeaderTranslation && -mHeaderDiffTotal >= midHeader) {
+        mHeader.setTranslationY(mMinHeaderTranslation);
+        mHeaderDiffTotal=mMinHeaderTranslation;
+      }
+    break;
+case FOOTER:
+  if (-mFooterDiffTotal > 0 && -mFooterDiffTotal < midFooter) {
+    mFooter.setTranslationY(0);
+    mFooterDiffTotal=0;
   }
+ else   if (-mFooterDiffTotal < mMinFooterTranslation && -mFooterDiffTotal >= midFooter) {
+    mFooter.setTranslationY(mMinFooterTranslation);
+    mFooterDiffTotal=-mMinFooterTranslation;
+  }
+break;
+case BOTH:
+if (-mHeaderDiffTotal > 0 && -mHeaderDiffTotal < midHeader) {
+mHeader.setTranslationY(0);
+mHeaderDiffTotal=0;
+}
+ else if (-mHeaderDiffTotal < -mMinHeaderTranslation && -mHeaderDiffTotal >= midHeader) {
+mHeader.setTranslationY(mMinHeaderTranslation);
+mHeaderDiffTotal=mMinHeaderTranslation;
+}
+if (-mFooterDiffTotal > 0 && -mFooterDiffTotal < midFooter) {
+mFooter.setTranslationY(0);
+mFooterDiffTotal=0;
+}
+ else if (-mFooterDiffTotal < mMinFooterTranslation && -mFooterDiffTotal >= midFooter) {
+mFooter.setTranslationY(mMinFooterTranslation);
+mFooterDiffTotal=-mMinFooterTranslation;
+}
+break;
+}
+}
 }

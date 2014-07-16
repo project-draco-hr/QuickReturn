@@ -1,30 +1,31 @@
 {
   int scrollY=QuickReturnUtils.getScrollY(listview);
   int diff=mPrevScrollY - scrollY;
+  if (diff != 0) {
 switch (mQuickReturnType) {
 case HEADER:
-    if (diff <= 0) {
-      mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);
+      if (diff < 0) {
+        mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);
+      }
+ else {
+        mHeaderDiffTotal=Math.min(Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation),0);
+      }
+    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.HONEYCOMB) {
+      mHeaderAnim=new TranslateAnimation(0,0,mHeaderDiffTotal,mHeaderDiffTotal);
+      mHeaderAnim.setFillAfter(true);
+      mHeaderAnim.setDuration(0);
+      mHeader.startAnimation(mHeaderAnim);
     }
  else {
-      mHeaderDiffTotal=Math.min(Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation),0);
+      mHeader.setTranslationY(mHeaderDiffTotal);
     }
-  if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.HONEYCOMB) {
-    mHeaderAnim=new TranslateAnimation(0,0,mHeaderDiffTotal,mHeaderDiffTotal);
-    mHeaderAnim.setFillAfter(true);
-    mHeaderAnim.setDuration(0);
-    mHeader.startAnimation(mHeaderAnim);
-  }
- else {
-    mHeader.setTranslationY(mHeaderDiffTotal);
-  }
-break;
+  break;
 case FOOTER:
-if (diff <= 0) {
-mFooterDiffTotal=Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation);
+if (diff < 0) {
+  mFooterDiffTotal=Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation);
 }
  else {
-mFooterDiffTotal=Math.min(Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation),0);
+  mFooterDiffTotal=Math.min(Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation),0);
 }
 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.HONEYCOMB) {
 mFooterAnim=new TranslateAnimation(0,0,-mFooterDiffTotal,-mFooterDiffTotal);
@@ -37,7 +38,7 @@ mFooter.setTranslationY(-mFooterDiffTotal);
 }
 break;
 case BOTH:
-if (diff <= 0) {
+if (diff < 0) {
 mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);
 mFooterDiffTotal=Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation);
 }
@@ -61,6 +62,7 @@ mFooter.setTranslationY(-mFooterDiffTotal);
 }
 default :
 break;
+}
 }
 mPrevScrollY=scrollY;
 }
