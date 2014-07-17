@@ -1,10 +1,10 @@
 {
   mContext=context;
   mQuickReturnType=quickReturnType;
+  mHeaderViews=headerViews;
+  mFooterViews=footerViews;
   mSlideHeaderUpAnimation=AnimationUtils.loadAnimation(mContext,R.anim.anticipate_slide_header_up);
   mSlideHeaderDownAnimation=AnimationUtils.loadAnimation(mContext,R.anim.overshoot_slide_header_down);
   mSlideFooterUpAnimation=AnimationUtils.loadAnimation(mContext,R.anim.overshoot_slide_footer_up);
   mSlideFooterDownAnimation=AnimationUtils.loadAnimation(mContext,R.anim.anticipate_slide_footer_down);
-  mHeader=headerView;
-  mFooter=footerView;
 }

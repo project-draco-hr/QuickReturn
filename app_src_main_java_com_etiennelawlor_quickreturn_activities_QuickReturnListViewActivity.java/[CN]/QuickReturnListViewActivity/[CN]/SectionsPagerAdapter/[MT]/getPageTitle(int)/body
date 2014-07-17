@@ -3,10 +3,14 @@ switch (position) {
 case 0:
     return "QRHeader";
 case 1:
-  return "SpeedyQRHeader";
+  return "QRHeader2";
 case 2:
-return "QRFooter";
+return "SpeedyQRHeader";
 case 3:
+return "QRFooter";
+case 4:
+return "QRFooter2";
+case 5:
 return "SpeedyQRFooter";
 }
 return null;

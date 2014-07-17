@@ -1,0 +1,10 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  mValues=getResources().getStringArray(R.array.countries);
+  ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.list_item,R.id.item_tv,mValues);
+  mListView.setAdapter(adapter);
+  int headerHeight=getActivity().getResources().getDimensionPixelSize(R.dimen.header_height2);
+  QuickReturnListViewOnScrollListener scrollListener=new QuickReturnListViewOnScrollListener(QuickReturnType.HEADER,mQuickReturnTextView,-headerHeight,null,0);
+  scrollListener.setCanSlideInIdleScrollState(true);
+  mListView.setOnScrollListener(scrollListener);
+}

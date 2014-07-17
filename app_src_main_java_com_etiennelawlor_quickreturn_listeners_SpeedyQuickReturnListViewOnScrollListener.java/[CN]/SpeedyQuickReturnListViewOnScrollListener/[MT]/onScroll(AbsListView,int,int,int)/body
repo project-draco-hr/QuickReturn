@@ -25,6 +25,24 @@ mFooter.setVisibility(View.VISIBLE);
 mFooter.startAnimation(mSlideFooterUpAnimation);
 }
 break;
+case CUSTOM:
+if (mHeaderViews != null) {
+for (View view : mHeaderViews) {
+if (view.getVisibility() == View.GONE) {
+view.setVisibility(View.VISIBLE);
+view.startAnimation(mSlideHeaderDownAnimation);
+}
+}
+}
+if (mFooterViews != null) {
+for (View view : mFooterViews) {
+if (view.getVisibility() == View.GONE) {
+view.setVisibility(View.VISIBLE);
+view.startAnimation(mSlideFooterUpAnimation);
+}
+}
+}
+break;
 }
 }
  else if (diff < 0) {
@@ -49,6 +67,24 @@ mHeader.startAnimation(mSlideHeaderUpAnimation);
 if (mFooter.getVisibility() == View.VISIBLE) {
 mFooter.setVisibility(View.GONE);
 mFooter.startAnimation(mSlideFooterDownAnimation);
+}
+break;
+case CUSTOM:
+if (mHeaderViews != null) {
+for (View view : mHeaderViews) {
+if (view.getVisibility() == View.VISIBLE) {
+view.setVisibility(View.GONE);
+view.startAnimation(mSlideHeaderUpAnimation);
+}
+}
+}
+if (mFooterViews != null) {
+for (View view : mFooterViews) {
+if (view.getVisibility() == View.VISIBLE) {
+view.setVisibility(View.GONE);
+view.startAnimation(mSlideFooterDownAnimation);
+}
+}
 }
 break;
 }

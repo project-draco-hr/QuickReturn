@@ -1,0 +1,6 @@
+{
+  Window window=getActivity().getWindow();
+  View v=window.getDecorView();
+  int resId=getResources().getIdentifier("action_bar_container","id","android");
+  return v.findViewById(resId);
+}
