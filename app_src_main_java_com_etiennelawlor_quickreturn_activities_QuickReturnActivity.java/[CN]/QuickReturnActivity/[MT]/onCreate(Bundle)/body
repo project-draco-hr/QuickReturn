@@ -2,4 +2,6 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_quickreturn);
   ButterKnife.inject(this);
+  ActionBar actionBar=getActionBar();
+  actionBar.setDisplayHomeAsUpEnabled(false);
 }
