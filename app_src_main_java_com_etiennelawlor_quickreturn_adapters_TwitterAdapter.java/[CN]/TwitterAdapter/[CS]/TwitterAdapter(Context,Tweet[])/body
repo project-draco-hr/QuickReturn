@@ -1,0 +1,6 @@
+{
+  super(context,R.layout.twitter_row,tweets);
+  mContext=context;
+  mTweets=tweets;
+  mInflater=LayoutInflater.from(mContext);
+}

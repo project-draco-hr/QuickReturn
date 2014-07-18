@@ -1,0 +1,19 @@
+{
+  ViewHolder holder;
+  if (convertView == null) {
+    convertView=mInflater.inflate(R.layout.twitter_row,parent,false);
+    holder=new ViewHolder(convertView);
+    convertView.setTag(holder);
+  }
+ else {
+    holder=(ViewHolder)convertView.getTag();
+  }
+  Tweet tweet=getItem(position);
+  String profileImageUrl="http://thunderbird37.com/wp-content/uploads/2014/03/megan-fox-pictures.jpg";
+  if (!TextUtils.isEmpty(profileImageUrl)) {
+    Picasso.with(holder.mUserImageView.getContext()).load(profileImageUrl).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),50),QuickReturnUtils.dp2px(getContext(),50)).error(R.drawable.ic_action_edit).into(holder.mUserImageView);
+  }
+ else {
+  }
+  return convertView;
+}
