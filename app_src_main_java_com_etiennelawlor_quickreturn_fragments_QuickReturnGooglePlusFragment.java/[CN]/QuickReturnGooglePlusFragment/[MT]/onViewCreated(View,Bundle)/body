@@ -1,8 +1,12 @@
 {
   super.onViewCreated(view,savedInstanceState);
   mValues=getResources().getStringArray(R.array.countries);
-  ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.list_item,R.id.item_tv,mValues);
-  mListView.setAdapter(adapter);
+  ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.google_plus_list_item,R.id.item_tv,mValues);
+  AnimationAdapter animAdapter=new SwingBottomInAnimationAdapter(adapter);
+  animAdapter.setAbsListView(getListView());
+  mListView.setAdapter(animAdapter);
+  mListView.addFooterView(new View(getActivity()),null,false);
+  mListView.addHeaderView(new View(getActivity()),null,false);
   ArrayList<View> headerViews=new ArrayList<View>();
   headerViews.add(getActionBarView());
   ArrayList<View> footerViews=new ArrayList<View>();

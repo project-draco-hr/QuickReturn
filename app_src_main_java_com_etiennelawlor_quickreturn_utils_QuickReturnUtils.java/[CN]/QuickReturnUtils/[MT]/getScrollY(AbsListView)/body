@@ -6,6 +6,7 @@
   int firstVisiblePosition=lv.getFirstVisiblePosition();
   int scrollY=-(c.getTop());
   sListViewItemHeights.put(lv.getFirstVisiblePosition(),c.getHeight());
+  Log.d("QuickReturnUtils","getScrollY() : -(c.getTop()) - " + -(c.getTop()));
   for (int i=0; i < firstVisiblePosition; ++i) {
     if (sListViewItemHeights.get(i) != null)     scrollY+=sListViewItemHeights.get(i);
   }
