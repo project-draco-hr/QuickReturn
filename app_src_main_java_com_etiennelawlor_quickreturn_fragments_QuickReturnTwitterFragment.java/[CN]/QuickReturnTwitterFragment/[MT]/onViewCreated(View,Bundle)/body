@@ -9,7 +9,18 @@
   mListView.setOnScrollListener(scrollListener);
   mPlaceHolderView=getActivity().getLayoutInflater().inflate(R.layout.view_header_placeholder,mListView,false);
   mListView.addHeaderView(mPlaceHolderView);
-  Tweet[] tweets={new Tweet("abeefdsafsafa"),new Tweet("rwbregfdbs"),new Tweet("vddafe"),new Tweet("vrgresegr"),new Tweet("vrhthtr"),new Tweet("bthsths"),new Tweet("muyhtss"),new Tweet("zeeag"),new Tweet("nytsgsgr"),new Tweet("bytjd"),new Tweet("arershsherzhbvrgr")};
+  ArrayList<Tweet> tweets=new ArrayList<Tweet>();
+  for (int i=0; i < 23; i++) {
+    Tweet tweet=new Tweet();
+    tweet.setAvatarUrl(mAvatarUrls[i]);
+    tweet.setDisplayName(mDisplayNames[i]);
+    tweet.setUsername(mUsernames[i]);
+    tweet.setTimestamp(mTimestamps[i]);
+    tweet.setStarCount(mStars[i]);
+    tweet.setRetweetCount(mRetweets[i]);
+    tweet.setMessage(mMessages[i]);
+    tweets.add(tweet);
+  }
   TwitterAdapter adapter=new TwitterAdapter(getActivity(),tweets);
   mListView.setAdapter(adapter);
 }

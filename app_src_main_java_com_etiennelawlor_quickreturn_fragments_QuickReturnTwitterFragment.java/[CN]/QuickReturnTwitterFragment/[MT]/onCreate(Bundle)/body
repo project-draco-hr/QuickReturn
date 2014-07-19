@@ -1,3 +1,10 @@
 {
   super.onCreate(savedInstanceState);
+  mAvatarUrls=getActivity().getResources().getStringArray(R.array.avatar_urls);
+  mDisplayNames=getActivity().getResources().getStringArray(R.array.display_names);
+  mUsernames=getActivity().getResources().getStringArray(R.array.usernames);
+  mStars=getActivity().getResources().getIntArray(R.array.stars);
+  mRetweets=getActivity().getResources().getIntArray(R.array.retweets);
+  mTimestamps=getActivity().getResources().getStringArray(R.array.timestamps);
+  mMessages=getActivity().getResources().getStringArray(R.array.messages);
 }
