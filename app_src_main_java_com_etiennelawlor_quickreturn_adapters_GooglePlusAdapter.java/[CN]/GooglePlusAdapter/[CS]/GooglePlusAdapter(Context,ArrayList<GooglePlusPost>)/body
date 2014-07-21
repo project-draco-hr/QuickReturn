@@ -1,0 +1,6 @@
+{
+  super(context,R.layout.twitter_row,googlePlusPosts);
+  mContext=context;
+  mGooglePlusPosts=googlePlusPosts;
+  mInflater=LayoutInflater.from(mContext);
+}

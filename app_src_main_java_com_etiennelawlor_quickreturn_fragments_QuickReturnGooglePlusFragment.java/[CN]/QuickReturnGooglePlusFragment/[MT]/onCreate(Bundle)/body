@@ -1,3 +1,8 @@
 {
   super.onCreate(savedInstanceState);
+  mAvatarUrls=getActivity().getResources().getStringArray(R.array.avatar_urls);
+  mDisplayNames=getActivity().getResources().getStringArray(R.array.display_names);
+  mTimestamps=getActivity().getResources().getStringArray(R.array.google_plus_timestamps);
+  mMessages=getActivity().getResources().getStringArray(R.array.google_plus_messages);
+  mPostImageUrls=getActivity().getResources().getStringArray(R.array.google_plus_post_image_urls);
 }
