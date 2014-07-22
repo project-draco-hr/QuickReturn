@@ -7,9 +7,16 @@
     post.setDisplayName(mDisplayNames[i]);
     post.setTimestamp(mTimestamps[i]);
     post.setPostImageUrl(mPostImageUrls[i]);
-    post.setCommenterOneAvatarUrl(mAvatarUrls[(new Random().nextInt(mAvatarUrls.length))]);
-    post.setCommenterTwoAvatarUrl(mAvatarUrls[(new Random().nextInt(mAvatarUrls.length))]);
-    post.setCommenterThreeAvatarUrl(mAvatarUrls[(new Random().nextInt(mAvatarUrls.length))]);
+    post.setComment(mComments[i]);
+    int randOne=new Random().nextInt(mAvatarUrls.length);
+    post.setCommenterOneDisplayName(mDisplayNames[randOne]);
+    post.setCommenterOneAvatarUrl(mAvatarUrls[randOne]);
+    int randTwo=new Random().nextInt(mAvatarUrls.length);
+    post.setCommenterTwoDisplayName(mDisplayNames[randTwo]);
+    post.setCommenterTwoAvatarUrl(mAvatarUrls[randTwo]);
+    int randThree=new Random().nextInt(mAvatarUrls.length);
+    post.setCommenterThreeDisplayName(mDisplayNames[randThree]);
+    post.setCommenterThreeAvatarUrl(mAvatarUrls[randThree]);
     post.setMessage(mMessages[i]);
     posts.add(post);
   }

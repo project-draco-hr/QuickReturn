@@ -5,4 +5,5 @@
   mTimestamps=getActivity().getResources().getStringArray(R.array.google_plus_timestamps);
   mMessages=getActivity().getResources().getStringArray(R.array.google_plus_messages);
   mPostImageUrls=getActivity().getResources().getStringArray(R.array.google_plus_post_image_urls);
+  mComments=getActivity().getResources().getStringArray(R.array.google_plus_comments);
 }
