@@ -21,9 +21,7 @@
     posts.add(post);
   }
   GooglePlusAdapter adapter=new GooglePlusAdapter(getActivity(),posts);
-  AnimationAdapter animAdapter=new SwingBottomInAnimationAdapter(adapter);
-  animAdapter.setAbsListView(getListView());
-  mListView.setAdapter(animAdapter);
+  mListView.setAdapter(adapter);
   mListView.addFooterView(new View(getActivity()),null,false);
   mListView.addHeaderView(new View(getActivity()),null,false);
   ArrayList<View> headerViews=new ArrayList<View>();
