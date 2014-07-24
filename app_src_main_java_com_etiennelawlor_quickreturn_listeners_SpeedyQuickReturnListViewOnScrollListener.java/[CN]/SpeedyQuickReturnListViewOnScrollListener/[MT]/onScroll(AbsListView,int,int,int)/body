@@ -36,9 +36,12 @@ view.startAnimation(mSlideHeaderDownAnimation);
 }
 if (mFooterViews != null) {
 for (View view : mFooterViews) {
+int scrollThreshold=(Integer)view.getTag(R.id.scroll_threshold_key);
+if (diff > scrollThreshold) {
 if (view.getVisibility() == View.GONE) {
 view.setVisibility(View.VISIBLE);
 view.startAnimation(mSlideFooterUpAnimation);
+}
 }
 }
 }
@@ -80,9 +83,12 @@ view.startAnimation(mSlideHeaderUpAnimation);
 }
 if (mFooterViews != null) {
 for (View view : mFooterViews) {
+int scrollThreshold=(Integer)view.getTag(R.id.scroll_threshold_key);
+if (diff < -scrollThreshold) {
 if (view.getVisibility() == View.VISIBLE) {
 view.setVisibility(View.GONE);
 view.startAnimation(mSlideFooterDownAnimation);
+}
 }
 }
 }
