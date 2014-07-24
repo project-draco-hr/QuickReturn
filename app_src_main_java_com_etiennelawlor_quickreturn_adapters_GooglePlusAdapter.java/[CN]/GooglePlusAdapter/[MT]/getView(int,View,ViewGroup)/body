@@ -19,8 +19,10 @@
   Picasso.with(holder.mCommenterOneImageView.getContext()).load(post.getCommenterOneAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterOneImageView);
   Picasso.with(holder.mCommenterTwoImageView.getContext()).load(post.getCommenterTwoAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterTwoImageView);
   Picasso.with(holder.mCommenterThreeImageView.getContext()).load(post.getCommenterThreeAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterThreeImageView);
-  Animation animation=AnimationUtils.loadAnimation(getContext(),(position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
-  convertView.startAnimation(animation);
+  if (position > lastPosition) {
+    Animation animation=AnimationUtils.loadAnimation(getContext(),R.anim.up_from_bottom);
+    convertView.startAnimation(animation);
+  }
   lastPosition=position;
   return convertView;
 }
