@@ -1,10 +1,11 @@
 {
   super.onViewCreated(view,savedInstanceState);
-  int headerHeight=getResources().getDimensionPixelSize(R.dimen.header_height);
+  int headerHeight=getResources().getDimensionPixelSize(R.dimen.twitter_header_height);
+  int footerHeight=getResources().getDimensionPixelSize(R.dimen.twitter_footer_height);
   int indicatorHeight=QuickReturnUtils.dp2px(getActivity(),5);
-  int headerTranslation=-headerHeight + QuickReturnUtils.getActionBarHeight(getActivity()) + indicatorHeight;
-  int footerTranslation=-headerHeight + QuickReturnUtils.getActionBarHeight(getActivity());
-  QuickReturnListViewOnScrollListener scrollListener=new QuickReturnListViewOnScrollListener(QuickReturnType.BOTH,mCoordinator.getTabs(),headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
+  int headerTranslation=-headerHeight + indicatorHeight;
+  int footerTranslation=-footerHeight + indicatorHeight;
+  QuickReturnListViewOnScrollListener scrollListener=new QuickReturnListViewOnScrollListener(QuickReturnType.TWITTER,mCoordinator.getTabs(),headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
   scrollListener.setCanSlideInIdleScrollState(true);
   mListView.setOnScrollListener(scrollListener);
   mPlaceHolderView=getActivity().getLayoutInflater().inflate(R.layout.view_header_placeholder,mListView,false);
