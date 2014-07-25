@@ -11,6 +11,8 @@
   GooglePlusPost post=getItem(position);
   holder.mDisplayNameTextView.setText(post.getDisplayName());
   holder.mTimestampTextView.setText(post.getTimestamp());
+  holder.mAddCommentTextView.setText(String.valueOf(post.getCommentCount()));
+  holder.mPlusOneTextView.setText(getContext().getString(R.string.plus_one,post.getPlusOneCount()));
   holder.mMessageTextView.setText(post.getMessage());
   Spanned styledText=Html.fromHtml("<b>" + post.getCommenterOneDisplayName() + "</b> "+ post.getComment());
   holder.mCommentTextView.setText(styledText);

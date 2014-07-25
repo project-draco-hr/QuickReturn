@@ -6,4 +6,6 @@
   mMessages=getActivity().getResources().getStringArray(R.array.google_plus_messages);
   mPostImageUrls=getActivity().getResources().getStringArray(R.array.google_plus_post_image_urls);
   mComments=getActivity().getResources().getStringArray(R.array.google_plus_comments);
+  mCommentCounts=getActivity().getResources().getIntArray(R.array.google_plus_comment_counts);
+  mPlusOneCounts=getActivity().getResources().getIntArray(R.array.google_plus_plus_one_counts);
 }

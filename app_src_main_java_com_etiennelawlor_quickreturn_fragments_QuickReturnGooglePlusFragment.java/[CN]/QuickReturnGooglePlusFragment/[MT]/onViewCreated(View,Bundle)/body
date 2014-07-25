@@ -6,6 +6,8 @@
     post.setAvatarUrl(mAvatarUrls[i]);
     post.setDisplayName(mDisplayNames[i]);
     post.setTimestamp(mTimestamps[i]);
+    post.setCommentCount(mCommentCounts[i]);
+    post.setPlusOneCount(mPlusOneCounts[i]);
     post.setPostImageUrl(mPostImageUrls[i]);
     post.setComment(mComments[i]);
     int randOne=new Random().nextInt(mAvatarUrls.length);
