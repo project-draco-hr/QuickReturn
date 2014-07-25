@@ -23,9 +23,9 @@
     posts.add(post);
   }
   GooglePlusAdapter adapter=new GooglePlusAdapter(getActivity(),posts);
-  mListView.setAdapter(adapter);
   mListView.addFooterView(new View(getActivity()),null,false);
   mListView.addHeaderView(new View(getActivity()),null,false);
+  mListView.setAdapter(adapter);
   ArrayList<View> headerViews=new ArrayList<View>();
   headerViews.add(getActionBarView());
   ArrayList<View> footerViews=new ArrayList<View>();
