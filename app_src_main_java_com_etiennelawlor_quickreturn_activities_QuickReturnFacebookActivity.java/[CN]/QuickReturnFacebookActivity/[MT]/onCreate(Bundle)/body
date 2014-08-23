@@ -6,12 +6,13 @@
   mViewPager.setAdapter(mSectionsPagerAdapter);
   mTabs.setAllCaps(false);
   mTabs.setShouldExpand(true);
-  mTabs.setIndicatorColorResource(R.color.steel_blue);
-  mTabs.setIndicatorHeight(QuickReturnUtils.dp2px(this,5));
+  mTabs.setIndicatorColorResource(R.color.san_juan);
+  mTabs.setIndicatorHeight(QuickReturnUtils.dp2px(this,6));
   mTabs.setDividerColor(getResources().getColor(android.R.color.transparent));
+  mTabs.setUnderlineHeight(QuickReturnUtils.dp2px(this,0));
   mTabs.setOnPageChangeListener(mTabsOnPageChangeListener);
   mTabs.setViewPager(mViewPager);
   mTabsLinearLayout=((LinearLayout)mTabs.getChildAt(0));
   ImageButton ib=(ImageButton)mTabsLinearLayout.getChildAt(0);
-  ib.setImageResource(R.drawable.ic_action_event_highlighted);
+  ib.setImageResource(R.drawable.ic_action_news_highlighted);
 }

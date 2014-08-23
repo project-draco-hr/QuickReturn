@@ -1,13 +1,13 @@
 {
 switch (position) {
 case 0:
-    return R.drawable.ic_action_event;
+    return R.drawable.ic_action_news;
 case 1:
-  return R.drawable.ic_action_cc_bcc;
+  return R.drawable.ic_action_users;
 case 2:
-return R.drawable.ic_action_chat;
+return R.drawable.ic_action_messages;
 case 3:
-return R.drawable.ic_action_web_site;
+return R.drawable.ic_action_notifications;
 case 4:
 return R.drawable.ic_action_more;
 }
