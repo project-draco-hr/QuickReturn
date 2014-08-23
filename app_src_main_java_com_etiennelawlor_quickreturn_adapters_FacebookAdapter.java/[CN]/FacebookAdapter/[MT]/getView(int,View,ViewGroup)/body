@@ -1,0 +1,20 @@
+{
+  final ViewHolder holder;
+  if (convertView == null) {
+    convertView=mInflater.inflate(R.layout.facebook_row,parent,false);
+    holder=new ViewHolder(convertView);
+    convertView.setTag(holder);
+  }
+ else {
+    holder=(ViewHolder)convertView.getTag();
+  }
+  FacebookPost post=getItem(position);
+  holder.mDisplayNameTextView.setText(post.getDisplayName());
+  holder.mTimestampTextView.setText(post.getTimestamp());
+  holder.mLikeCountTextView.setText(getContext().getResources().getQuantityString(R.plurals.likes,post.getLikeCount(),post.getLikeCount()));
+  holder.mCommentCountTextView.setText(getContext().getResources().getQuantityString(R.plurals.comments,post.getCommentCount(),post.getCommentCount()));
+  holder.mMessageTextView.setText(post.getMessage());
+  Picasso.with(holder.mUserImageView.getContext()).load(post.getAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mUserImageView);
+  Picasso.with(holder.mPostImageView.getContext()).load(post.getPostImageUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),346),QuickReturnUtils.dp2px(getContext(),320)).error(android.R.drawable.stat_notify_error).into(holder.mPostImageView);
+  return convertView;
+}

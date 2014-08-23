@@ -1,7 +1,20 @@
 {
   super.onViewCreated(view,savedInstanceState);
-  mValues=getResources().getStringArray(R.array.countries);
-  ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),R.layout.list_item,R.id.item_tv,mValues);
+  ArrayList<FacebookPost> posts=new ArrayList<FacebookPost>();
+  for (int i=0; i < 23; i++) {
+    FacebookPost post=new FacebookPost();
+    post.setAvatarUrl(mAvatarUrls[i]);
+    post.setDisplayName(mDisplayNames[i]);
+    post.setTimestamp(mTimestamps[i]);
+    post.setCommentCount(mCommentCounts[i]);
+    post.setLikeCount(mLikeCounts[i]);
+    post.setPostImageUrl(mPostImageUrls[i]);
+    post.setMessage(mMessages[i]);
+    posts.add(post);
+  }
+  FacebookAdapter adapter=new FacebookAdapter(getActivity(),posts);
+  mListView.addFooterView(new View(getActivity()),null,false);
+  mListView.addHeaderView(new View(getActivity()),null,false);
   mListView.setAdapter(adapter);
   int headerHeight=getResources().getDimensionPixelSize(R.dimen.facebook_header_height);
   int footerHeight=getResources().getDimensionPixelSize(R.dimen.facebook_footer_height);

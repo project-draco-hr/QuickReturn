@@ -1,3 +1,10 @@
 {
   super.onCreate(savedInstanceState);
+  mAvatarUrls=getActivity().getResources().getStringArray(R.array.avatar_urls);
+  mDisplayNames=getActivity().getResources().getStringArray(R.array.display_names);
+  mTimestamps=getActivity().getResources().getStringArray(R.array.facebook_timestamps);
+  mMessages=getActivity().getResources().getStringArray(R.array.facebook_messages);
+  mPostImageUrls=getActivity().getResources().getStringArray(R.array.facebook_post_image_urls);
+  mCommentCounts=getActivity().getResources().getIntArray(R.array.facebook_comment_counts);
+  mLikeCounts=getActivity().getResources().getIntArray(R.array.facebook_like_counts);
 }
