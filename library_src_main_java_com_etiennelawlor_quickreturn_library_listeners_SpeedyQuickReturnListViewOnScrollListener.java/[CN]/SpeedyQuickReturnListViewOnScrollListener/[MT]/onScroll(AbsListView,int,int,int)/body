@@ -1,4 +1,7 @@
 {
+  for (  AbsListView.OnScrollListener listener : mExtraOnScrollListeners) {
+    listener.onScroll(listview,firstVisibleItem,visibleItemCount,totalItemCount);
+  }
   int scrollY=QuickReturnUtils.getScrollY(listview);
   int diff=mPrevScrollY - scrollY;
   if (diff > 0) {

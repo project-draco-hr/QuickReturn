@@ -1,4 +1,7 @@
 {
+  for (  AbsListView.OnScrollListener listener : mExtraOnScrollListenerList) {
+    listener.onScrollStateChanged(view,scrollState);
+  }
   if (scrollState == SCROLL_STATE_IDLE && mCanSlideInIdleScrollState) {
     int midHeader=-mMinHeaderTranslation / 2;
     int midFooter=mMinFooterTranslation / 2;

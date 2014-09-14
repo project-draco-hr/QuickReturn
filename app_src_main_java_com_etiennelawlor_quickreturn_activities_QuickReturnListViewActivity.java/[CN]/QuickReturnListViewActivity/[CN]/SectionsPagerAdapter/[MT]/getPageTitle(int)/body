@@ -12,6 +12,8 @@ case 4:
 return "QRFooter2";
 case 5:
 return "SpeedyQRFooter";
+case 6:
+return "WithExtraOnScrollListener";
 }
 return null;
 }

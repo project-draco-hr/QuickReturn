@@ -1,0 +1,4 @@
+{
+  super.onActivityCreated(savedInstanceState);
+  mQuickReturnListViewOnScrollListener.registerExtraOnScrollListener(this);
+}

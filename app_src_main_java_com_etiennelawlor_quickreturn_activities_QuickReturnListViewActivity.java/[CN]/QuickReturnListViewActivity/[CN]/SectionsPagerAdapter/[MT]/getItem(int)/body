@@ -12,6 +12,8 @@ case 4:
 return QuickReturnFooterListFragment3.newInstance();
 case 5:
 return QuickReturnFooterListFragment2.newInstance();
+case 6:
+return QuickReturnWithExtraOnScrollListenerFragment.newInstance();
 default :
 return QuickReturnHeaderListFragment.newInstance();
 }
