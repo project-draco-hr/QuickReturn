@@ -1,0 +1,8 @@
+{
+  if (firstVisibleItem + visibleItemCount == totalItemCount && getListView().getFooterViewsCount() == 0) {
+    ProgressBar progressBar=new ProgressBar(getActivity());
+    progressBar.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+    progressBar.setPadding(8,8,8,8);
+    getListView().addFooterView(progressBar);
+  }
+}

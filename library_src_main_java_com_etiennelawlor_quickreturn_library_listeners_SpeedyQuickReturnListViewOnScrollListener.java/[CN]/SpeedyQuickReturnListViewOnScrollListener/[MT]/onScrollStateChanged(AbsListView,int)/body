@@ -1,2 +1,5 @@
 {
+  for (  AbsListView.OnScrollListener listener : mExtraOnScrollListeners) {
+    listener.onScrollStateChanged(view,scrollState);
+  }
 }
