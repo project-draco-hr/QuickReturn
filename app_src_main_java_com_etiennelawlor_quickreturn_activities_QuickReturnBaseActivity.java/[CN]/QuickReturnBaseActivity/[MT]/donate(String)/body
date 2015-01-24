@@ -1,16 +1,17 @@
 {
   try {
     String developerPayload="bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzK";
-    Bundle bundle=mService.getBuyIntent(3,getPackageName(),productSku,ITEM_TYPE_INAPP,developerPayload);
-    PendingIntent pendingIntent=bundle.getParcelable(RESPONSE_BUY_INTENT);
-    int responseCode=bundle.getInt(RESPONSE_CODE);
+    if (mService != null) {
+      Bundle bundle=mService.getBuyIntent(3,getPackageName(),productSku,ITEM_TYPE_INAPP,developerPayload);
+      PendingIntent pendingIntent=bundle.getParcelable(RESPONSE_BUY_INTENT);
+      int responseCode=bundle.getInt(RESPONSE_CODE);
 switch (responseCode) {
 case BILLING_RESPONSE_RESULT_OK:
-      startIntentSenderForResult(pendingIntent.getIntentSender(),BUY_REQUEST_CODE,new Intent(),0,0,0);
-    break;
+        startIntentSenderForResult(pendingIntent.getIntentSender(),BUY_REQUEST_CODE,new Intent(),0,0,0);
+      break;
 case BILLING_RESPONSE_RESULT_USER_CANCELED:
-  Log.d(getClass().getSimpleName(),"donate() : User pressed back or canceled a dialog");
-break;
+    Log.d(getClass().getSimpleName(),"donate() : User pressed back or canceled a dialog");
+  break;
 case BILLING_RESPONSE_RESULT_BILLING_UNAVAILABLE:
 Log.d(getClass().getSimpleName(),"donate() : Billing API version is not supported for the type requested");
 break;
@@ -32,6 +33,7 @@ Log.d(getClass().getSimpleName(),"donate() : Failure to consume since item is no
 break;
 default :
 break;
+}
 }
 }
  catch (RemoteException e) {

@@ -18,9 +18,9 @@
   holder.mCommentTextView.setText(styledText);
   Picasso.with(holder.mUserImageView.getContext()).load(post.getAvatarUrl()).transform(mTransformation).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),50),QuickReturnUtils.dp2px(getContext(),50)).error(android.R.drawable.stat_notify_error).into(holder.mUserImageView);
   Picasso.with(holder.mPostImageView.getContext()).load(post.getPostImageUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),346),QuickReturnUtils.dp2px(getContext(),320)).error(android.R.drawable.stat_notify_error).into(holder.mPostImageView);
-  Picasso.with(holder.mCommenterOneImageView.getContext()).load(post.getCommenterOneAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterOneImageView);
-  Picasso.with(holder.mCommenterTwoImageView.getContext()).load(post.getCommenterTwoAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterTwoImageView);
-  Picasso.with(holder.mCommenterThreeImageView.getContext()).load(post.getCommenterThreeAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterThreeImageView);
+  Picasso.with(holder.mCommenterOneImageView.getContext()).load(post.getCommenterOneAvatarUrl()).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterOneImageView);
+  Picasso.with(holder.mCommenterTwoImageView.getContext()).load(post.getCommenterTwoAvatarUrl()).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterTwoImageView);
+  Picasso.with(holder.mCommenterThreeImageView.getContext()).load(post.getCommenterThreeAvatarUrl()).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(getContext(),34),QuickReturnUtils.dp2px(getContext(),34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterThreeImageView);
   if (position > lastPosition) {
     Animation animation=AnimationUtils.loadAnimation(getContext(),R.anim.up_from_bottom);
     convertView.startAnimation(animation);
