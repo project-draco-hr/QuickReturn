@@ -9,7 +9,7 @@ switch (responseCode) {
 case BILLING_RESPONSE_RESULT_OK:
     String signature=data.getStringExtra(RESPONSE_INAPP_SIGNATURE);
   String purchaseData=data.getStringExtra(RESPONSE_INAPP_PURCHASE_DATA);
-JSONObject object=null;
+JSONObject object;
 try {
 object=new JSONObject(purchaseData);
 String sku=object.getString("productId");
@@ -60,7 +60,6 @@ break;
 break;
 case RESULT_CANCELED:
 Log.d(getClass().getSimpleName(),"onActivityResult() : RESULT_CANCELED");
-responseCode=data.getIntExtra(RESPONSE_CODE,-5);
 showCrouton(android.R.color.holo_red_light,R.string.beer_order_canceled);
 break;
 default :

@@ -2,8 +2,7 @@
   super.onViewCreated(view,savedInstanceState);
   int headerHeight=getResources().getDimensionPixelSize(R.dimen.header_height2);
   int headerTranslation=-(headerHeight);
-  int footerHeight=getResources().getDimensionPixelSize(R.dimen.footer_height);
-  int footerTranslation=footerHeight;
+  int footerTranslation=getResources().getDimensionPixelSize(R.dimen.footer_height);
 switch (mQuickReturnType) {
 case HEADER:
     mQuickReturnHeaderTextView.setVisibility(View.VISIBLE);

@@ -6,7 +6,7 @@
     int responseCode=bundle.getInt(RESPONSE_CODE);
 switch (responseCode) {
 case BILLING_RESPONSE_RESULT_OK:
-      startIntentSenderForResult(pendingIntent.getIntentSender(),BUY_REQUEST_CODE,new Intent(),Integer.valueOf(0),Integer.valueOf(0),Integer.valueOf(0));
+      startIntentSenderForResult(pendingIntent.getIntentSender(),BUY_REQUEST_CODE,new Intent(),0,0,0);
     break;
 case BILLING_RESPONSE_RESULT_USER_CANCELED:
   Log.d(getClass().getSimpleName(),"donate() : User pressed back or canceled a dialog");
