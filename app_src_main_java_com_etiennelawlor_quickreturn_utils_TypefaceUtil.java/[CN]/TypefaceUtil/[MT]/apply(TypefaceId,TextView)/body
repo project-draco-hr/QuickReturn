@@ -1,0 +1,6 @@
+{
+  if (tv == null || tv.isInEditMode()) {
+    return;
+  }
+  tv.setTypeface(getTypeface(id));
+}

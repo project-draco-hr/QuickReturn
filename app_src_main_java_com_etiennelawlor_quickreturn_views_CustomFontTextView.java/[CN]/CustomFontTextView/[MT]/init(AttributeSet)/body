@@ -1,0 +1,18 @@
+{
+  if (isInEditMode()) {
+    return;
+  }
+  if (attrs != null) {
+    TypedArray a=getContext().getTheme().obtainStyledAttributes(attrs,R.styleable.CustomFontTextView,0,0);
+    try {
+      Integer position=a.getInteger(R.styleable.CustomFontTextView_textFont,10);
+      setTypeface(TypefaceUtil.getTypeface(Typefaces.from(position)));
+    }
+  finally {
+      a.recycle();
+    }
+  }
+ else {
+    setTypeface(TypefaceUtil.getTypeface(Typefaces.ROBOTO_REGULAR));
+  }
+}

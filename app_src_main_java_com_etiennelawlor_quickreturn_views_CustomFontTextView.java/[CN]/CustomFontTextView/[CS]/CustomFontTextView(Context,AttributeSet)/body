@@ -1,6 +1,4 @@
 {
   super(context,attrs);
-  if (!isInEditMode()) {
-    init(context,attrs);
-  }
+  init(attrs);
 }

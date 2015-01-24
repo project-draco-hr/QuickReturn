@@ -3,4 +3,5 @@
   mContext=context;
   mGooglePlusPosts=googlePlusPosts;
   mInflater=LayoutInflater.from(mContext);
+  mTransformation=new RoundedTransformationBuilder().cornerRadius(QuickReturnUtils.dp2px(getContext(),50)).build();
 }

@@ -1,0 +1,8 @@
+{
+  Typeface typeface=sTypefaceCache.get(id);
+  if (typeface == null) {
+    typeface=Typeface.createFromAsset(QuickReturnApplication.get().getAssets(),id.getFilePath());
+    sTypefaceCache.put(id,typeface);
+  }
+  return typeface;
+}
