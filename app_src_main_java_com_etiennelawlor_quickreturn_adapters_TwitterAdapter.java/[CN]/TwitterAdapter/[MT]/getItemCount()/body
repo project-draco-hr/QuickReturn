@@ -1,0 +1,3 @@
+{
+  return mTweets.size() + 1;
+}

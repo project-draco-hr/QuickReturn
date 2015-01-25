@@ -23,9 +23,11 @@
     posts.add(post);
   }
   GooglePlusAdapter adapter=new GooglePlusAdapter(getActivity(),posts);
-  mListView.addFooterView(new View(getActivity()),null,false);
-  mListView.addHeaderView(new View(getActivity()),null,false);
-  mListView.setAdapter(adapter);
+  mRecyclerView.setHasFixedSize(true);
+  RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
+  mRecyclerView.setLayoutManager(layoutManager);
+  mRecyclerView.setAdapter(adapter);
+  mRecyclerView.addItemDecoration(new SpacesItemDecoration(QuickReturnUtils.dp2px(getActivity(),8)));
   ArrayList<View> headerViews=new ArrayList<>();
   headerViews.add(getActionBarView());
   ArrayList<View> footerViews=new ArrayList<>();
@@ -33,10 +35,10 @@
   footerViews.add(mQuickReturnFooterTextView);
   mQuickReturnFooterImageView.setTag(R.id.scroll_threshold_key,4);
   footerViews.add(mQuickReturnFooterImageView);
-  SpeedyQuickReturnListViewOnScrollListener scrollListener=new SpeedyQuickReturnListViewOnScrollListener(getActivity(),QuickReturnType.GOOGLE_PLUS,null,footerViews);
+  SpeedyQuickReturnRecyclerViewOnScrollListener scrollListener=new SpeedyQuickReturnRecyclerViewOnScrollListener(getActivity(),QuickReturnType.GOOGLE_PLUS,null,footerViews);
   scrollListener.setSlideHeaderUpAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_header_up));
   scrollListener.setSlideHeaderDownAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_header_down));
   scrollListener.setSlideFooterUpAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_footer_up));
   scrollListener.setSlideFooterDownAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_footer_down));
-  mListView.setOnScrollListener(scrollListener);
+  mRecyclerView.setOnScrollListener(scrollListener);
 }

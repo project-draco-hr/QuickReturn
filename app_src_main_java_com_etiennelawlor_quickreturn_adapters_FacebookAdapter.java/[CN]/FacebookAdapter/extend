@@ -1,1 +1,1 @@
-ArrayAdapter<FacebookPost>
+RecyclerView.Adapter<FacebookAdapter.ViewHolder>

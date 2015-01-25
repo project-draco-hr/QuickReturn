@@ -1,0 +1,56 @@
+{
+  super.onScrolled(recyclerView,dx,dy);
+  for (  RecyclerView.OnScrollListener listener : mExtraOnScrollListenerList) {
+    listener.onScrolled(recyclerView,dx,dy);
+  }
+  int scrollY=QuickReturnUtils.getScrollY(recyclerView);
+  int diff=mPrevScrollY - scrollY;
+  if (diff != 0) {
+switch (mQuickReturnType) {
+case HEADER:
+      if (diff < 0) {
+        mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);
+      }
+ else {
+        mHeaderDiffTotal=Math.min(Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation),0);
+      }
+    mHeader.setTranslationY(mHeaderDiffTotal);
+  break;
+case FOOTER:
+if (diff < 0) {
+  mFooterDiffTotal=Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation);
+}
+ else {
+  mFooterDiffTotal=Math.min(Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation),0);
+}
+mFooter.setTranslationY(-mFooterDiffTotal);
+break;
+case BOTH:
+if (diff < 0) {
+mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);
+mFooterDiffTotal=Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation);
+}
+ else {
+mHeaderDiffTotal=Math.min(Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation),0);
+mFooterDiffTotal=Math.min(Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation),0);
+}
+mHeader.setTranslationY(mHeaderDiffTotal);
+mFooter.setTranslationY(-mFooterDiffTotal);
+break;
+case TWITTER:
+if (diff < 0) {
+if (scrollY > -mMinHeaderTranslation) mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);
+if (scrollY > mMinFooterTranslation) mFooterDiffTotal=Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation);
+}
+ else {
+mHeaderDiffTotal=Math.min(Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation),0);
+mFooterDiffTotal=Math.min(Math.max(mFooterDiffTotal + diff,-mMinFooterTranslation),0);
+}
+mHeader.setTranslationY(mHeaderDiffTotal);
+mFooter.setTranslationY(-mFooterDiffTotal);
+default :
+break;
+}
+}
+mPrevScrollY=scrollY;
+}

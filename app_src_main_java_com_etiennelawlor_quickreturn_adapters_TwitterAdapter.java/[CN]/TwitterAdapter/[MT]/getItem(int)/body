@@ -1,0 +1,3 @@
+{
+  return mTweets.get(position - 1);
+}

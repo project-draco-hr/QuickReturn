@@ -1,1 +1,1 @@
-ArrayAdapter<Tweet>
+RecyclerView.Adapter<RecyclerView.ViewHolder>

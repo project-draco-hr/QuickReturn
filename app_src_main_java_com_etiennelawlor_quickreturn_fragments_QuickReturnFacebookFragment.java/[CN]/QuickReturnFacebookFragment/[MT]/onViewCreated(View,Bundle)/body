@@ -13,14 +13,16 @@
     posts.add(post);
   }
   FacebookAdapter adapter=new FacebookAdapter(getActivity(),posts);
-  mListView.addFooterView(new View(getActivity()),null,false);
-  mListView.addHeaderView(new View(getActivity()),null,false);
-  mListView.setAdapter(adapter);
+  mRecyclerView.setHasFixedSize(true);
+  RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
+  mRecyclerView.setLayoutManager(layoutManager);
+  mRecyclerView.setAdapter(adapter);
+  mRecyclerView.addItemDecoration(new SpacesItemDecoration(QuickReturnUtils.dp2px(getActivity(),8)));
   int headerHeight=getResources().getDimensionPixelSize(R.dimen.facebook_header_height);
   int footerHeight=getResources().getDimensionPixelSize(R.dimen.facebook_footer_height);
   int headerTranslation=-headerHeight;
   int footerTranslation=-footerHeight;
-  QuickReturnListViewOnScrollListener scrollListener=new QuickReturnListViewOnScrollListener(QuickReturnType.BOTH,mQuickReturnHeaderTextView,headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
+  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnType.BOTH,mQuickReturnHeaderTextView,headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
   scrollListener.setCanSlideInIdleScrollState(true);
-  mListView.setOnScrollListener(scrollListener);
+  mRecyclerView.setOnScrollListener(scrollListener);
 }

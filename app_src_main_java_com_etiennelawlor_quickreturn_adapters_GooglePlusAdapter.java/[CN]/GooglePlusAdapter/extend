@@ -1,1 +1,1 @@
-ArrayAdapter<GooglePlusPost>
+RecyclerView.Adapter<GooglePlusAdapter.ViewHolder>

@@ -1,0 +1,5 @@
+QuickReturnType quickReturnType
+View headerView
+int headerTranslation
+View footerView
+int footerTranslation

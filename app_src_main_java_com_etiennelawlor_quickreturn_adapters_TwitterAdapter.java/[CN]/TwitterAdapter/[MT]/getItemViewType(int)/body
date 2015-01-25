@@ -1,0 +1,4 @@
+{
+  if (isPositionHeader(position))   return TYPE_HEADER;
+  return TYPE_ITEM;
+}

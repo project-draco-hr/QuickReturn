@@ -1,0 +1,7 @@
+{
+  mQuickReturnType=quickReturnType;
+  mHeader=headerView;
+  mMinHeaderTranslation=headerTranslation;
+  mFooter=footerView;
+  mMinFooterTranslation=footerTranslation;
+}

@@ -1,0 +1,5 @@
+{
+  for (  RecyclerView.OnScrollListener listener : mExtraOnScrollListeners) {
+    listener.onScrollStateChanged(view,newState);
+  }
+}
