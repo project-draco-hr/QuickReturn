@@ -1,0 +1,12 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  mValues=getResources().getStringArray(R.array.countries);
+  CountriesAdapter countriesAdapter=new CountriesAdapter(getActivity(),Arrays.asList(mValues));
+  RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
+  mRecyclerView.setLayoutManager(layoutManager);
+  mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),null));
+  mRecyclerView.setAdapter(countriesAdapter);
+  int headerHeight=getActivity().getResources().getDimensionPixelSize(R.dimen.header_height2);
+  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnType.HEADER,mQuickReturnTextView,-headerHeight,null,0);
+  mRecyclerView.setOnScrollListener(scrollListener);
+}

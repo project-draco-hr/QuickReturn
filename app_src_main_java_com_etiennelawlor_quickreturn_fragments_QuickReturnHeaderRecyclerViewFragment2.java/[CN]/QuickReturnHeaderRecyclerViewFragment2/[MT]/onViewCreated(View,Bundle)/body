@@ -1,0 +1,11 @@
+{
+  super.onViewCreated(view,savedInstanceState);
+  mValues=getResources().getStringArray(R.array.countries);
+  CountriesAdapter countriesAdapter=new CountriesAdapter(getActivity(),Arrays.asList(mValues));
+  RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
+  mRecyclerView.setLayoutManager(layoutManager);
+  mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),null));
+  mRecyclerView.setAdapter(countriesAdapter);
+  SpeedyQuickReturnRecyclerViewOnScrollListener scrollListener=new SpeedyQuickReturnRecyclerViewOnScrollListener(getActivity(),QuickReturnType.HEADER,mQuickReturnTextView,null);
+  mRecyclerView.setOnScrollListener(scrollListener);
+}

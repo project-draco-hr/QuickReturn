@@ -1,0 +1,6 @@
+{
+  QuickReturnFooterRecyclerViewFragment3 fragment=new QuickReturnFooterRecyclerViewFragment3();
+  Bundle args=new Bundle();
+  fragment.setArguments(args);
+  return fragment;
+}

@@ -1,0 +1,6 @@
+{
+  String country=mCountries.get(position);
+  if (!TextUtils.isEmpty(country)) {
+    holder.mCountryTextView.setText(country);
+  }
+}

@@ -1,0 +1,18 @@
+{
+switch (position) {
+case 0:
+    return QuickReturnHeaderRecyclerViewFragment.newInstance();
+case 1:
+  return QuickReturnHeaderRecyclerViewFragment3.newInstance();
+case 2:
+return QuickReturnHeaderRecyclerViewFragment2.newInstance();
+case 3:
+return QuickReturnFooterRecyclerViewFragment.newInstance();
+case 4:
+return QuickReturnFooterRecyclerViewFragment3.newInstance();
+case 5:
+return QuickReturnFooterRecyclerViewFragment2.newInstance();
+default :
+return QuickReturnHeaderRecyclerViewFragment.newInstance();
+}
+}
