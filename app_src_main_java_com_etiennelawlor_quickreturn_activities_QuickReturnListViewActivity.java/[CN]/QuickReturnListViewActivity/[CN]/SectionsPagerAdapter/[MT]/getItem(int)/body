@@ -1,20 +1,29 @@
 {
+  Bundle bundle=new Bundle();
 switch (position) {
 case 0:
-    return QuickReturnHeaderListFragment.newInstance();
+    bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SIMPLE.name());
+  return QuickReturnHeaderListViewFragment.newInstance(bundle);
 case 1:
-  return QuickReturnHeaderListFragment3.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SNAP.name());
+return QuickReturnHeaderListViewFragment.newInstance(bundle);
 case 2:
-return QuickReturnHeaderListFragment2.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_ANTICIPATE_OVERSHOOT.name());
+return QuickReturnHeaderListViewFragment.newInstance(bundle);
 case 3:
-return QuickReturnFooterListFragment.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SIMPLE.name());
+return QuickReturnFooterListViewFragment.newInstance(bundle);
 case 4:
-return QuickReturnFooterListFragment3.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SNAP.name());
+return QuickReturnFooterListViewFragment.newInstance(bundle);
 case 5:
-return QuickReturnFooterListFragment2.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_ANTICIPATE_OVERSHOOT.name());
+return QuickReturnFooterListViewFragment.newInstance(bundle);
 case 6:
-return QuickReturnWithExtraOnScrollListenerFragment.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SNAP.name());
+return QuickReturnWithExtraOnScrollListenerFragment.newInstance(bundle);
 default :
-return QuickReturnHeaderListFragment.newInstance();
+bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SIMPLE.name());
+return QuickReturnHeaderListViewFragment.newInstance(bundle);
 }
 }

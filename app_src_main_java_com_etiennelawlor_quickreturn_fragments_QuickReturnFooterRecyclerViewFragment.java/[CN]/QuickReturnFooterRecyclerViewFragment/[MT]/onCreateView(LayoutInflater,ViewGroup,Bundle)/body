@@ -1,5 +1,5 @@
 {
-  View view=inflater.inflate(R.layout.fragment_recycler_view_quick_return_footer,container,false);
+  View view=inflater.inflate(R.layout.fragment_recyclerview_quick_return_footer,container,false);
   ButterKnife.inject(this,view);
   return view;
 }

@@ -2,25 +2,25 @@
   Bundle bundle=new Bundle();
 switch (position) {
 case 0:
-    bundle.putString(getString(R.string.quick_return_type),QuickReturnType.HEADER.name());
+    bundle.putString("quick_return_view_type",QuickReturnViewType.HEADER.name());
   return QuickReturnFragment.newInstance(bundle);
 case 1:
-bundle.putString(getString(R.string.quick_return_type),QuickReturnType.HEADER.name());
+bundle.putString("quick_return_view_type",QuickReturnViewType.HEADER.name());
 return SpeedyQuickReturnFragment.newInstance(bundle);
 case 2:
-bundle.putString(getString(R.string.quick_return_type),QuickReturnType.FOOTER.name());
+bundle.putString("quick_return_view_type",QuickReturnViewType.FOOTER.name());
 return QuickReturnFragment.newInstance(bundle);
 case 3:
-bundle.putString(getString(R.string.quick_return_type),QuickReturnType.FOOTER.name());
+bundle.putString("quick_return_view_type",QuickReturnViewType.FOOTER.name());
 return SpeedyQuickReturnFragment.newInstance(bundle);
 case 4:
-bundle.putString(getString(R.string.quick_return_type),QuickReturnType.BOTH.name());
+bundle.putString("quick_return_view_type",QuickReturnViewType.BOTH.name());
 return QuickReturnFragment.newInstance(bundle);
 case 5:
-bundle.putString(getString(R.string.quick_return_type),QuickReturnType.BOTH.name());
+bundle.putString("quick_return_view_type",QuickReturnViewType.BOTH.name());
 return SpeedyQuickReturnFragment.newInstance(bundle);
 default :
-bundle.putString(getString(R.string.quick_return_type),QuickReturnType.HEADER.name());
+bundle.putString("quick_return_view_type",QuickReturnViewType.HEADER.name());
 return SpeedyQuickReturnFragment.newInstance(bundle);
 }
 }

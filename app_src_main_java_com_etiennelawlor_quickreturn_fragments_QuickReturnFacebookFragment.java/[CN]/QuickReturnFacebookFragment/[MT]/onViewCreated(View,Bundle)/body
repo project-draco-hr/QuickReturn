@@ -22,7 +22,7 @@
   int footerHeight=getResources().getDimensionPixelSize(R.dimen.facebook_footer_height);
   int headerTranslation=-headerHeight;
   int footerTranslation=-footerHeight;
-  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnType.BOTH,mQuickReturnHeaderTextView,headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
+  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnViewType.BOTH,mQuickReturnHeaderTextView,headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
   scrollListener.setCanSlideInIdleScrollState(true);
   mRecyclerView.setOnScrollListener(scrollListener);
 }

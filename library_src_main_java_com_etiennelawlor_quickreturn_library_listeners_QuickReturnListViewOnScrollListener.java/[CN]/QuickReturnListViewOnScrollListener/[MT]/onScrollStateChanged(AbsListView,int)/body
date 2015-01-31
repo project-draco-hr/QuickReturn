@@ -5,7 +5,7 @@
   if (scrollState == SCROLL_STATE_IDLE && mCanSlideInIdleScrollState) {
     int midHeader=-mMinHeaderTranslation / 2;
     int midFooter=mMinFooterTranslation / 2;
-switch (mQuickReturnType) {
+switch (mQuickReturnViewType) {
 case HEADER:
       if (-mHeaderDiffTotal > 0 && -mHeaderDiffTotal < midHeader) {
         ObjectAnimator anim=ObjectAnimator.ofFloat(mHeader,"translationY",mHeader.getTranslationY(),0);

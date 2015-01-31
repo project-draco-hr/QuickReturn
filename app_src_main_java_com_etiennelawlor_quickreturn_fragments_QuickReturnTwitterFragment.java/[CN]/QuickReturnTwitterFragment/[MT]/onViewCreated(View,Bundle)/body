@@ -22,7 +22,7 @@
   int indicatorHeight=QuickReturnUtils.dp2px(getActivity(),4);
   int headerTranslation=-headerHeight + indicatorHeight;
   int footerTranslation=-footerHeight + indicatorHeight;
-  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnType.TWITTER,mCoordinator.getTabs(),headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
+  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnViewType.TWITTER,mCoordinator.getTabs(),headerTranslation,mQuickReturnFooterLinearLayout,-footerTranslation);
   scrollListener.setCanSlideInIdleScrollState(true);
   mRecyclerView.setOnScrollListener(scrollListener);
 }

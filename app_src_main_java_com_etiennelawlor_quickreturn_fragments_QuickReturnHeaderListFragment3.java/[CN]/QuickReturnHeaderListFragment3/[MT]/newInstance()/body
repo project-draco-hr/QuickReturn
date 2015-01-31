@@ -1,6 +1,0 @@
-{
-  QuickReturnHeaderListFragment3 fragment=new QuickReturnHeaderListFragment3();
-  Bundle args=new Bundle();
-  fragment.setArguments(args);
-  return fragment;
-}

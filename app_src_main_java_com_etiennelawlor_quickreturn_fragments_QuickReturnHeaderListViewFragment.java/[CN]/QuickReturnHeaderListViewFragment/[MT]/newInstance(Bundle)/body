@@ -1,0 +1,6 @@
+{
+  QuickReturnHeaderListViewFragment fragment=new QuickReturnHeaderListViewFragment();
+  fragment.setRetainInstance(true);
+  fragment.setArguments(extras);
+  return fragment;
+}

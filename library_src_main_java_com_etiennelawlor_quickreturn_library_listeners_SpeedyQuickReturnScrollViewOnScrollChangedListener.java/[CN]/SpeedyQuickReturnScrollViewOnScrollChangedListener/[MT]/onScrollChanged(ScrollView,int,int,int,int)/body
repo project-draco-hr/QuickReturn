@@ -1,6 +1,6 @@
 {
   if (t < oldt) {
-switch (mQuickReturnType) {
+switch (mQuickReturnViewType) {
 case HEADER:
       if (mHeader.getVisibility() == View.GONE) {
         mHeader.setVisibility(View.VISIBLE);
@@ -26,7 +26,7 @@ break;
 }
 }
  else if (t > oldt) {
-switch (mQuickReturnType) {
+switch (mQuickReturnViewType) {
 case HEADER:
 if (mHeader.getVisibility() == View.VISIBLE) {
 mHeader.setVisibility(View.GONE);

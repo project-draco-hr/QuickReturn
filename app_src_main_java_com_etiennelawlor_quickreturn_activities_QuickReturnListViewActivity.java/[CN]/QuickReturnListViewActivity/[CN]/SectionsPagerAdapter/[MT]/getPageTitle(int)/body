@@ -1,17 +1,17 @@
 {
 switch (position) {
 case 0:
-    return "QRHeader";
+    return "QRHeaderSimple";
 case 1:
-  return "QRHeader2";
+  return "QRHeaderSnap";
 case 2:
-return "SpeedyQRHeader";
+return "QRHeaderAnticipateOvershoot";
 case 3:
-return "QRFooter";
+return "QRFooterSimple";
 case 4:
-return "QRFooter2";
+return "QRFooterSnap";
 case 5:
-return "SpeedyQRFooter";
+return "QRFooterAnticipateOvershoot";
 case 6:
 return "WithExtraOnScrollListener";
 }

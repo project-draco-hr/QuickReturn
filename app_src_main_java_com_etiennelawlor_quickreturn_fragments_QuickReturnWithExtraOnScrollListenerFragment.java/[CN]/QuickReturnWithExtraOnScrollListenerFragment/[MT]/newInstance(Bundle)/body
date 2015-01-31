@@ -1,0 +1,6 @@
+{
+  QuickReturnWithExtraOnScrollListenerFragment fragment=new QuickReturnWithExtraOnScrollListenerFragment();
+  fragment.setRetainInstance(true);
+  fragment.setArguments(extras);
+  return fragment;
+}

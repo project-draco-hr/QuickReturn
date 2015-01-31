@@ -7,6 +7,25 @@
   mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),null));
   mRecyclerView.setAdapter(countriesAdapter);
   int headerHeight=getActivity().getResources().getDimensionPixelSize(R.dimen.header_height2);
-  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnType.HEADER,mQuickReturnTextView,-headerHeight,null,0);
+  QuickReturnRecyclerViewOnScrollListener scrollListener;
+  SpeedyQuickReturnRecyclerViewOnScrollListener scrollListener2;
+switch (mQuickReturnAnimationType) {
+case TRANSLATION_SIMPLE:
+    scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnViewType.HEADER,mQuickReturnTextView,-headerHeight,null,0);
   mRecyclerView.setOnScrollListener(scrollListener);
+break;
+case TRANSLATION_SNAP:
+scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnViewType.HEADER,mQuickReturnTextView,-headerHeight,null,0);
+scrollListener.setCanSlideInIdleScrollState(true);
+mRecyclerView.setOnScrollListener(scrollListener);
+break;
+case TRANSLATION_ANTICIPATE_OVERSHOOT:
+scrollListener2=new SpeedyQuickReturnRecyclerViewOnScrollListener(getActivity(),QuickReturnViewType.HEADER,mQuickReturnTextView,null);
+mRecyclerView.setOnScrollListener(scrollListener2);
+break;
+default :
+scrollListener=new QuickReturnRecyclerViewOnScrollListener(QuickReturnViewType.HEADER,mQuickReturnTextView,-headerHeight,null,0);
+mRecyclerView.setOnScrollListener(scrollListener);
+break;
+}
 }

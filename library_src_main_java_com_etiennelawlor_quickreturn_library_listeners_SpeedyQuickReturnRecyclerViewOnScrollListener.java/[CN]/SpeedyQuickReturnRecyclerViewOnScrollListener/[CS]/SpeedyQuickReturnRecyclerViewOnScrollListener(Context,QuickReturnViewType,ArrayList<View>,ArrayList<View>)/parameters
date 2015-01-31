@@ -1,0 +1,4 @@
+Context context
+QuickReturnViewType quickReturnViewType
+ArrayList<View> headerViews
+ArrayList<View> footerViews

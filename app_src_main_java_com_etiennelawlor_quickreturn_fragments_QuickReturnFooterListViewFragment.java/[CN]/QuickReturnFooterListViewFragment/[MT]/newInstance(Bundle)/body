@@ -1,0 +1,6 @@
+{
+  QuickReturnFooterListViewFragment fragment=new QuickReturnFooterListViewFragment();
+  fragment.setRetainInstance(true);
+  fragment.setArguments(extras);
+  return fragment;
+}

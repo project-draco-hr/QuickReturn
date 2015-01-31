@@ -1,6 +1,0 @@
-{
-  QuickReturnHeaderRecyclerViewFragment2 fragment=new QuickReturnHeaderRecyclerViewFragment2();
-  Bundle args=new Bundle();
-  fragment.setArguments(args);
-  return fragment;
-}

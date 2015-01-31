@@ -1,0 +1,6 @@
+{
+  QuickReturnFooterListViewFragment fragment=new QuickReturnFooterListViewFragment();
+  Bundle args=new Bundle();
+  fragment.setArguments(args);
+  return fragment;
+}

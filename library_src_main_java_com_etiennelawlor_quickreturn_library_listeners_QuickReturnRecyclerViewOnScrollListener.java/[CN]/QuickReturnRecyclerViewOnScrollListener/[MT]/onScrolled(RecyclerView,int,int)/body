@@ -6,7 +6,7 @@
   int scrollY=QuickReturnUtils.getScrollY(recyclerView);
   int diff=mPrevScrollY - scrollY;
   if (diff != 0) {
-switch (mQuickReturnType) {
+switch (mQuickReturnViewType) {
 case HEADER:
       if (diff < 0) {
         mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);

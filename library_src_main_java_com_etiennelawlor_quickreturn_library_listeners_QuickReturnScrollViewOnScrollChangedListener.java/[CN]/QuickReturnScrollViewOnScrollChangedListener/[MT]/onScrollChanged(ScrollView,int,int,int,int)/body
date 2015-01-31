@@ -1,6 +1,6 @@
 {
   int diff=oldt - t;
-switch (mQuickReturnType) {
+switch (mQuickReturnViewType) {
 case HEADER:
     if (diff <= 0) {
       mHeaderDiffTotal=Math.max(mHeaderDiffTotal + diff,mMinHeaderTranslation);

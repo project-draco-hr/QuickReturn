@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  if (getArguments() != null) {
+    mQuickReturnAnimationType=QuickReturnAnimationType.valueOf(getArguments().getString("quick_return_animation_type"));
+  }
+}

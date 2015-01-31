@@ -1,6 +1,0 @@
-{
-  QuickReturnFooterListFragment3 fragment=new QuickReturnFooterListFragment3();
-  Bundle args=new Bundle();
-  fragment.setArguments(args);
-  return fragment;
-}
