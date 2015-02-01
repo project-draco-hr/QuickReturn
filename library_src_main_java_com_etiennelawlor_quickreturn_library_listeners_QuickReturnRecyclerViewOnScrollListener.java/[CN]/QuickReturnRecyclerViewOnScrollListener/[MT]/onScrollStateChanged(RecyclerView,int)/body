@@ -3,7 +3,7 @@
   for (  RecyclerView.OnScrollListener listener : mExtraOnScrollListenerList) {
     listener.onScrollStateChanged(recyclerView,newState);
   }
-  if (newState == RecyclerView.SCROLL_STATE_IDLE && mCanSlideInIdleScrollState) {
+  if (newState == RecyclerView.SCROLL_STATE_IDLE && mIsSnappable) {
     int midHeader=-mMinHeaderTranslation / 2;
     int midFooter=mMinFooterTranslation / 2;
 switch (mQuickReturnViewType) {

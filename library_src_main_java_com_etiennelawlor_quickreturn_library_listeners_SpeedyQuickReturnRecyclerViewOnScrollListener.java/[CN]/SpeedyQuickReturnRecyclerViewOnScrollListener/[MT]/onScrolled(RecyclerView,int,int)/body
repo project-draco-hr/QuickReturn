@@ -3,7 +3,7 @@
   for (  RecyclerView.OnScrollListener listener : mExtraOnScrollListeners) {
     listener.onScrolled(recyclerView,dx,dy);
   }
-  int scrollY=QuickReturnUtils.getScrollY(recyclerView);
+  int scrollY=QuickReturnUtils.getScrollY(recyclerView,mColumnCount);
   int diff=mPrevScrollY - scrollY;
   if (diff > 0) {
 switch (mQuickReturnViewType) {

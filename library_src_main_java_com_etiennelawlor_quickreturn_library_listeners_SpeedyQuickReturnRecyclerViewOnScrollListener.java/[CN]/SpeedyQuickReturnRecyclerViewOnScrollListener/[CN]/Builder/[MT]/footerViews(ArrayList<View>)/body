@@ -1,0 +1,4 @@
+{
+  mFooterViews=footerViews;
+  return this;
+}

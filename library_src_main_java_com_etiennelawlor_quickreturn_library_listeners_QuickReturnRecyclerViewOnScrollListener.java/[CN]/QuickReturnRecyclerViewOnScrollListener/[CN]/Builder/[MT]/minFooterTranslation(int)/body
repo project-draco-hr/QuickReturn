@@ -1,0 +1,4 @@
+{
+  mMinFooterTranslation=minFooterTranslation;
+  return this;
+}

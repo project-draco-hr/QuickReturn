@@ -1,0 +1,4 @@
+{
+  mIsSnappable=isSnappable;
+  return this;
+}

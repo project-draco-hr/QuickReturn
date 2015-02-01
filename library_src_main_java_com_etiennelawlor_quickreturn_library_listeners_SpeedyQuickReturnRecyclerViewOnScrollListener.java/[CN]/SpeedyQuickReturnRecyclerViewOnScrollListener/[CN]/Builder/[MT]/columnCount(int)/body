@@ -1,0 +1,4 @@
+{
+  mColumnCount=columnCount;
+  return this;
+}
