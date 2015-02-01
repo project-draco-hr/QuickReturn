@@ -1,3 +1,0 @@
-{
-  startActivity(new Intent(QuickReturnActivity.this,QuickReturnRecyclerViewActivity.class));
-}

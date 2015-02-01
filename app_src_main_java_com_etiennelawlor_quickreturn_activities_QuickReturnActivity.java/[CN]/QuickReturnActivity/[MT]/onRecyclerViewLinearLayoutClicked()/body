@@ -1,0 +1,3 @@
+{
+  startActivity(new Intent(QuickReturnActivity.this,QuickReturnRecyclerViewActivity.class).putExtra("layout_manager","linear"));
+}

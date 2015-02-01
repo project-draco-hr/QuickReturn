@@ -2,6 +2,13 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_quick_return_recyclerview);
   ButterKnife.inject(this);
+  Intent intent=getIntent();
+  if (intent != null) {
+    Bundle bundle=intent.getExtras();
+    if (bundle != null) {
+      mLayoutManagerType=bundle.getString("layout_manager");
+    }
+  }
   mSectionsPagerAdapter=new SectionsPagerAdapter(getFragmentManager());
   mViewPager.setAdapter(mSectionsPagerAdapter);
   mTabs.setAllCaps(false);

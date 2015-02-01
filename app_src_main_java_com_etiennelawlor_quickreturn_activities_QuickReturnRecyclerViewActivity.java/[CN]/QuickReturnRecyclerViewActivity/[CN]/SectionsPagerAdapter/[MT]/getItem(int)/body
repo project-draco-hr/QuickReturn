@@ -1,5 +1,6 @@
 {
   Bundle bundle=new Bundle();
+  bundle.putString("layout_manager",mLayoutManagerType);
 switch (position) {
 case 0:
     bundle.putString("quick_return_animation_type",QuickReturnAnimationType.TRANSLATION_SIMPLE.name());
