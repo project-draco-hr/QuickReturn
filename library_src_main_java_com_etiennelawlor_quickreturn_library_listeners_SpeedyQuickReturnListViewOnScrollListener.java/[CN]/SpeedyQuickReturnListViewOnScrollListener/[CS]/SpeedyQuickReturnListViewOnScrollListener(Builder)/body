@@ -1,0 +1,11 @@
+{
+  mQuickReturnViewType=builder.mQuickReturnViewType;
+  mHeader=builder.mHeader;
+  mFooter=builder.mFooter;
+  mHeaderViews=builder.mHeaderViews;
+  mFooterViews=builder.mFooterViews;
+  mSlideHeaderUpAnimation=builder.mSlideHeaderUpAnimation;
+  mSlideHeaderDownAnimation=builder.mSlideHeaderDownAnimation;
+  mSlideFooterUpAnimation=builder.mSlideFooterUpAnimation;
+  mSlideFooterDownAnimation=builder.mSlideFooterDownAnimation;
+}

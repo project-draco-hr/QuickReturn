@@ -1,0 +1,4 @@
+{
+  mFooter=footer;
+  return this;
+}

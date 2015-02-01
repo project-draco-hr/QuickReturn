@@ -2,7 +2,7 @@
   for (  AbsListView.OnScrollListener listener : mExtraOnScrollListenerList) {
     listener.onScrollStateChanged(view,scrollState);
   }
-  if (scrollState == SCROLL_STATE_IDLE && mCanSlideInIdleScrollState) {
+  if (scrollState == SCROLL_STATE_IDLE && mIsSnappable) {
     int midHeader=-mMinHeaderTranslation / 2;
     int midFooter=mMinFooterTranslation / 2;
 switch (mQuickReturnViewType) {

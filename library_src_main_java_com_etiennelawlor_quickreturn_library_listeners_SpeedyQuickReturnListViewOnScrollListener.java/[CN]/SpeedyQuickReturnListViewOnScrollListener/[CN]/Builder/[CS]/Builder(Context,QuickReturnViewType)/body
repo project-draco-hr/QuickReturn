@@ -1,0 +1,7 @@
+{
+  mSlideHeaderUpAnimation=AnimationUtils.loadAnimation(context,R.anim.anticipate_slide_header_up);
+  mSlideHeaderDownAnimation=AnimationUtils.loadAnimation(context,R.anim.overshoot_slide_header_down);
+  mSlideFooterUpAnimation=AnimationUtils.loadAnimation(context,R.anim.overshoot_slide_footer_up);
+  mSlideFooterDownAnimation=AnimationUtils.loadAnimation(context,R.anim.anticipate_slide_footer_down);
+  mQuickReturnViewType=quickReturnViewType;
+}
