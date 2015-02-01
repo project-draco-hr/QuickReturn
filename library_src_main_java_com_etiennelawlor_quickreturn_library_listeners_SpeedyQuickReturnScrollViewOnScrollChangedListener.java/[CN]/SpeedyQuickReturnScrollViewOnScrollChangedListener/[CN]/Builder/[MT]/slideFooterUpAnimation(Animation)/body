@@ -1,0 +1,4 @@
+{
+  mSlideFooterUpAnimation=slideFooterUpAnimation;
+  return this;
+}

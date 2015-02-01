@@ -1,18 +1,22 @@
 {
   super.onViewCreated(view,savedInstanceState);
+  SpeedyQuickReturnScrollViewOnScrollChangedListener scrollListener;
 switch (mQuickReturnViewType) {
 case HEADER:
     mQuickReturnHeaderTextView.setVisibility(View.VISIBLE);
-  mNotifyingScrollView.setOnScrollChangedListener(new SpeedyQuickReturnScrollViewOnScrollChangedListener(getActivity(),QuickReturnViewType.HEADER,mQuickReturnHeaderTextView,null));
+  scrollListener=new SpeedyQuickReturnScrollViewOnScrollChangedListener.Builder(getActivity(),QuickReturnViewType.HEADER).header(mQuickReturnHeaderTextView).build();
+mNotifyingScrollView.setOnScrollChangedListener(scrollListener);
 break;
 case FOOTER:
 mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
-mNotifyingScrollView.setOnScrollChangedListener(new SpeedyQuickReturnScrollViewOnScrollChangedListener(getActivity(),QuickReturnViewType.FOOTER,null,mQuickReturnFooterTextView));
+scrollListener=new SpeedyQuickReturnScrollViewOnScrollChangedListener.Builder(getActivity(),QuickReturnViewType.FOOTER).footer(mQuickReturnFooterTextView).build();
+mNotifyingScrollView.setOnScrollChangedListener(scrollListener);
 break;
 case BOTH:
 mQuickReturnHeaderTextView.setVisibility(View.VISIBLE);
 mQuickReturnFooterTextView.setVisibility(View.VISIBLE);
-mNotifyingScrollView.setOnScrollChangedListener(new SpeedyQuickReturnScrollViewOnScrollChangedListener(getActivity(),QuickReturnViewType.BOTH,mQuickReturnHeaderTextView,mQuickReturnFooterTextView));
+scrollListener=new SpeedyQuickReturnScrollViewOnScrollChangedListener.Builder(getActivity(),QuickReturnViewType.BOTH).header(mQuickReturnHeaderTextView).footer(mQuickReturnFooterTextView).build();
+mNotifyingScrollView.setOnScrollChangedListener(scrollListener);
 break;
 }
 mNotifyingScrollView.setOverScrollEnabled(false);
