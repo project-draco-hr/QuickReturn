@@ -1,0 +1,6 @@
+{
+  SpeedyQuickReturnWebViewFragment fragment=new SpeedyQuickReturnWebViewFragment();
+  fragment.setRetainInstance(true);
+  fragment.setArguments(extras);
+  return fragment;
+}

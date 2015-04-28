@@ -1,0 +1,54 @@
+{
+  if (t < oldt) {
+switch (mQuickReturnViewType) {
+case HEADER:
+      if (mHeader.getVisibility() == View.GONE) {
+        mHeader.setVisibility(View.VISIBLE);
+        mHeader.startAnimation(mSlideHeaderDownAnimation);
+      }
+    break;
+case FOOTER:
+  if (mFooter.getVisibility() == View.GONE) {
+    mFooter.setVisibility(View.VISIBLE);
+    mFooter.startAnimation(mSlideFooterUpAnimation);
+  }
+break;
+case BOTH:
+if (mHeader.getVisibility() == View.GONE) {
+mHeader.setVisibility(View.VISIBLE);
+mHeader.startAnimation(mSlideHeaderDownAnimation);
+}
+if (mFooter.getVisibility() == View.GONE) {
+mFooter.setVisibility(View.VISIBLE);
+mFooter.startAnimation(mSlideFooterUpAnimation);
+}
+break;
+}
+}
+ else if (t > oldt) {
+switch (mQuickReturnViewType) {
+case HEADER:
+if (mHeader.getVisibility() == View.VISIBLE) {
+mHeader.setVisibility(View.GONE);
+mHeader.startAnimation(mSlideHeaderUpAnimation);
+}
+break;
+case FOOTER:
+if (mFooter.getVisibility() == View.VISIBLE) {
+mFooter.setVisibility(View.GONE);
+mFooter.startAnimation(mSlideFooterDownAnimation);
+}
+break;
+case BOTH:
+if (mHeader.getVisibility() == View.VISIBLE) {
+mHeader.setVisibility(View.GONE);
+mHeader.startAnimation(mSlideHeaderUpAnimation);
+}
+if (mFooter.getVisibility() == View.VISIBLE) {
+mFooter.setVisibility(View.GONE);
+mFooter.startAnimation(mSlideFooterDownAnimation);
+}
+break;
+}
+}
+}

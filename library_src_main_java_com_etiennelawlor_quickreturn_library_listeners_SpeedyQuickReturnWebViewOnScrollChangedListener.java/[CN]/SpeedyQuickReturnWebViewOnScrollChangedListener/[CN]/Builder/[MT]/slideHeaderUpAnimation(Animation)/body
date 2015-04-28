@@ -1,0 +1,4 @@
+{
+  mSlideHeaderUpAnimation=slideHeaderUpAnimation;
+  return this;
+}
