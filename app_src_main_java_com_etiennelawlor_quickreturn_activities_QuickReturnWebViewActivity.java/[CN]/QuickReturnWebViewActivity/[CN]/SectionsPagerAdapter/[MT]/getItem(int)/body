@@ -1,0 +1,26 @@
+{
+  Bundle bundle=new Bundle();
+switch (position) {
+case 0:
+    bundle.putString("quick_return_view_type",QuickReturnViewType.HEADER.name());
+  return QuickReturnWebViewFragment.newInstance(bundle);
+case 1:
+bundle.putString("quick_return_view_type",QuickReturnViewType.HEADER.name());
+return SpeedyQuickReturnWebViewFragment.newInstance(bundle);
+case 2:
+bundle.putString("quick_return_view_type",QuickReturnViewType.FOOTER.name());
+return QuickReturnWebViewFragment.newInstance(bundle);
+case 3:
+bundle.putString("quick_return_view_type",QuickReturnViewType.FOOTER.name());
+return SpeedyQuickReturnWebViewFragment.newInstance(bundle);
+case 4:
+bundle.putString("quick_return_view_type",QuickReturnViewType.BOTH.name());
+return QuickReturnWebViewFragment.newInstance(bundle);
+case 5:
+bundle.putString("quick_return_view_type",QuickReturnViewType.BOTH.name());
+return SpeedyQuickReturnWebViewFragment.newInstance(bundle);
+default :
+bundle.putString("quick_return_view_type",QuickReturnViewType.HEADER.name());
+return SpeedyQuickReturnWebViewFragment.newInstance(bundle);
+}
+}

@@ -1,0 +1,4 @@
+{
+  mMinHeaderTranslation=minHeaderTranslation;
+  return this;
+}

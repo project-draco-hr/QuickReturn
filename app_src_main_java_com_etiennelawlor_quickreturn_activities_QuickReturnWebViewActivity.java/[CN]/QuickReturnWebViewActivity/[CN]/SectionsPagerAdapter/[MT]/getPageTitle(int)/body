@@ -1,0 +1,17 @@
+{
+switch (position) {
+case 0:
+    return "QRHeader";
+case 1:
+  return "SpeedyQRHeader";
+case 2:
+return "QRFooter";
+case 3:
+return "SpeedyQRFooter";
+case 4:
+return "QRBoth";
+case 5:
+return "SpeedyQRBoth";
+}
+return null;
+}

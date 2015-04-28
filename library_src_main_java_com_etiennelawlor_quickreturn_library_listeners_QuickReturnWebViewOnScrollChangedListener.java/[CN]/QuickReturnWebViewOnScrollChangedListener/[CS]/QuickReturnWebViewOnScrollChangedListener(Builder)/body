@@ -1,0 +1,7 @@
+{
+  mQuickReturnViewType=builder.mQuickReturnViewType;
+  mHeader=builder.mHeader;
+  mMinHeaderTranslation=builder.mMinHeaderTranslation;
+  mFooter=builder.mFooter;
+  mMinFooterTranslation=builder.mMinFooterTranslation;
+}
