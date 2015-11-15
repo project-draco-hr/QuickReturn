@@ -1,7 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_quick_return_twitter);
-  ButterKnife.inject(this);
+  ButterKnife.bind(this);
   mSectionsPagerAdapter=new SectionsPagerAdapter(getFragmentManager());
   mViewPager.setAdapter(mSectionsPagerAdapter);
   mTabs.setAllCaps(false);

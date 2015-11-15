@@ -1,5 +1,5 @@
 {
   View view=inflater.inflate(R.layout.fragment_quick_return_google_plus,container,false);
-  ButterKnife.inject(this,view);
+  ButterKnife.bind(this,view);
   return view;
 }

@@ -22,6 +22,6 @@
   int footerHeight=getResources().getDimensionPixelSize(R.dimen.facebook_footer_height);
   int headerTranslation=-headerHeight;
   int footerTranslation=-footerHeight;
-  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.BOTH).header(mQuickReturnHeaderTextView).minHeaderTranslation(headerTranslation).footer(mQuickReturnFooterLinearLayout).minFooterTranslation(-footerTranslation).isSnappable(true).build();
-  mRecyclerView.setOnScrollListener(scrollListener);
+  mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.BOTH).header(mQuickReturnHeaderTextView).minHeaderTranslation(headerTranslation).footer(mQuickReturnFooterLinearLayout).minFooterTranslation(-footerTranslation).isSnappable(true).build();
+  mRecyclerView.addOnScrollListener(mScrollListener);
 }

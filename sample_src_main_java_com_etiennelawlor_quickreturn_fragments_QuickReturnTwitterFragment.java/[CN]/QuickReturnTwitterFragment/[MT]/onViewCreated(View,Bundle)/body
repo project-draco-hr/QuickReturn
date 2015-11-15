@@ -22,6 +22,6 @@
   int indicatorHeight=QuickReturnUtils.dp2px(getActivity(),4);
   int headerTranslation=-headerHeight + indicatorHeight;
   int footerTranslation=-footerHeight + indicatorHeight;
-  QuickReturnRecyclerViewOnScrollListener scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.TWITTER).header(mCoordinator.getTabs()).minHeaderTranslation(headerTranslation).footer(mQuickReturnFooterLinearLayout).minFooterTranslation(-footerTranslation).isSnappable(true).build();
-  mRecyclerView.setOnScrollListener(scrollListener);
+  mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.TWITTER).header(mCoordinator.getTabs()).minHeaderTranslation(headerTranslation).footer(mQuickReturnFooterLinearLayout).minFooterTranslation(-footerTranslation).isSnappable(true).build();
+  mRecyclerView.addOnScrollListener(mScrollListener);
 }

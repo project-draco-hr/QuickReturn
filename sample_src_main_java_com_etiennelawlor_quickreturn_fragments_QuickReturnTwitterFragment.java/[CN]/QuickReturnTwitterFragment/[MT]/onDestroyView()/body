@@ -1,4 +1,5 @@
 {
   super.onDestroyView();
-  ButterKnife.reset(this);
+  removeListeners();
+  ButterKnife.unbind(this);
 }

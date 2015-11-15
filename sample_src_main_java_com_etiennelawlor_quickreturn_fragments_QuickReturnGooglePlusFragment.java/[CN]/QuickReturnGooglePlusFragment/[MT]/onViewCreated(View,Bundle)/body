@@ -35,6 +35,6 @@
   footerViews.add(mQuickReturnFooterTextView);
   mQuickReturnFooterImageView.setTag(R.id.scroll_threshold_key,3);
   footerViews.add(mQuickReturnFooterImageView);
-  SpeedyQuickReturnRecyclerViewOnScrollListener scrollListener=new SpeedyQuickReturnRecyclerViewOnScrollListener.Builder(getActivity(),QuickReturnViewType.GOOGLE_PLUS).footerViews(footerViews).slideHeaderUpAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_header_up)).slideHeaderDownAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_header_down)).slideFooterUpAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_footer_up)).slideFooterDownAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_footer_down)).build();
-  mRecyclerView.setOnScrollListener(scrollListener);
+  mScrollListener=new SpeedyQuickReturnRecyclerViewOnScrollListener.Builder(getActivity(),QuickReturnViewType.GOOGLE_PLUS).footerViews(footerViews).slideHeaderUpAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_header_up)).slideHeaderDownAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_header_down)).slideFooterUpAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_footer_up)).slideFooterDownAnimation(AnimationUtils.loadAnimation(getActivity(),R.anim.slide_footer_down)).build();
+  mRecyclerView.addOnScrollListener(mScrollListener);
 }

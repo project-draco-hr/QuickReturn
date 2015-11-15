@@ -1,0 +1,4 @@
+{
+  if (mQuickReturnAnimationType == QuickReturnAnimationType.TRANSLATION_ANTICIPATE_OVERSHOOT)   mRecyclerView.removeOnScrollListener(mScrollListener2);
+ else   mRecyclerView.removeOnScrollListener(mScrollListener);
+}

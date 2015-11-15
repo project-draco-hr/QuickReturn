@@ -16,44 +16,42 @@
     mRecyclerView.setAdapter(countriesGridLayoutAdapter);
   }
   int footerHeight=getActivity().getResources().getDimensionPixelSize(R.dimen.footer_height);
-  QuickReturnRecyclerViewOnScrollListener scrollListener;
-  SpeedyQuickReturnRecyclerViewOnScrollListener scrollListener2;
 switch (mQuickReturnAnimationType) {
 case TRANSLATION_SIMPLE:
     if (mLayoutManagerType.equals("grid")) {
-      scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).columnCount(2).build();
+      mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).columnCount(2).build();
     }
  else {
-      scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).build();
+      mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).build();
     }
-  mRecyclerView.setOnScrollListener(scrollListener);
+  mRecyclerView.addOnScrollListener(mScrollListener);
 break;
 case TRANSLATION_SNAP:
 if (mLayoutManagerType.equals("grid")) {
-scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).columnCount(2).isSnappable(true).build();
+mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).columnCount(2).isSnappable(true).build();
 }
  else {
-scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).isSnappable(true).build();
+mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).isSnappable(true).build();
 }
-mRecyclerView.setOnScrollListener(scrollListener);
+mRecyclerView.addOnScrollListener(mScrollListener);
 break;
 case TRANSLATION_ANTICIPATE_OVERSHOOT:
 if (mLayoutManagerType.equals("grid")) {
-scrollListener2=new SpeedyQuickReturnRecyclerViewOnScrollListener.Builder(getActivity(),QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).columnCount(2).build();
+mScrollListener2=new SpeedyQuickReturnRecyclerViewOnScrollListener.Builder(getActivity(),QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).columnCount(2).build();
 }
  else {
-scrollListener2=new SpeedyQuickReturnRecyclerViewOnScrollListener.Builder(getActivity(),QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).build();
+mScrollListener2=new SpeedyQuickReturnRecyclerViewOnScrollListener.Builder(getActivity(),QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).build();
 }
-mRecyclerView.setOnScrollListener(scrollListener2);
+mRecyclerView.addOnScrollListener(mScrollListener2);
 break;
 default :
 if (mLayoutManagerType.equals("grid")) {
-scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).columnCount(2).build();
+mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).columnCount(2).build();
 }
  else {
-scrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).build();
+mScrollListener=new QuickReturnRecyclerViewOnScrollListener.Builder(QuickReturnViewType.FOOTER).footer(mQuickReturnTextView).minFooterTranslation(footerHeight).build();
 }
-mRecyclerView.setOnScrollListener(scrollListener);
+mRecyclerView.addOnScrollListener(mScrollListener);
 break;
 }
 }
