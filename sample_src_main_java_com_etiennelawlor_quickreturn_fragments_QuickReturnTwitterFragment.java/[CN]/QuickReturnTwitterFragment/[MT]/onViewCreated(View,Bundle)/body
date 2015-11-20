@@ -12,7 +12,7 @@
     tweet.setMessage(mMessages[i]);
     tweets.add(tweet);
   }
-  TwitterAdapter adapter=new TwitterAdapter(getActivity(),tweets);
+  TwitterAdapter adapter=new TwitterAdapter(tweets);
   RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
   mRecyclerView.setLayoutManager(layoutManager);
   mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),null));

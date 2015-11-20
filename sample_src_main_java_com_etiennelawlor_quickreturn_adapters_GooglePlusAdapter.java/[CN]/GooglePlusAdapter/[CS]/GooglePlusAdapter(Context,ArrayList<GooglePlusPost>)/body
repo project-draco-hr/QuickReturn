@@ -1,7 +1,6 @@
 {
   mContext=context;
   mGooglePlusPosts=googlePlusPosts;
-  mInflater=LayoutInflater.from(mContext);
   mTransformation=new RoundedTransformationBuilder().cornerRadius(QuickReturnUtils.dp2px(mContext,50)).build();
   mTransformation2=new RoundedTransformationBuilder().cornerRadius(QuickReturnUtils.dp2px(mContext,2)).build();
 }

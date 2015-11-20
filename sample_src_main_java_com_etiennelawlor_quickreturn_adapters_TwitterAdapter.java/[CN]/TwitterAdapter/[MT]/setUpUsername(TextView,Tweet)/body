@@ -1,0 +1,6 @@
+{
+  String username=tweet.getUsername();
+  if (!TextUtils.isEmpty(username)) {
+    tv.setText(username);
+  }
+}

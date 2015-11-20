@@ -1,18 +1,17 @@
 {
   GooglePlusPost post=mGooglePlusPosts.get(position);
   if (post != null) {
-    holder.mDisplayNameTextView.setText(post.getDisplayName());
-    holder.mTimestampTextView.setText(post.getTimestamp());
-    holder.mAddCommentTextView.setText(String.valueOf(post.getCommentCount()));
-    holder.mPlusOneTextView.setText(mContext.getString(R.string.plus_one,post.getPlusOneCount()));
-    holder.mMessageTextView.setText(post.getMessage());
-    Spanned styledText=Html.fromHtml("<b>" + post.getCommenterOneDisplayName() + "</b> "+ post.getComment());
-    holder.mCommentTextView.setText(styledText);
-    Picasso.with(holder.mUserImageView.getContext()).load(post.getAvatarUrl()).transform(mTransformation).centerCrop().resize(QuickReturnUtils.dp2px(mContext,50),QuickReturnUtils.dp2px(mContext,50)).error(android.R.drawable.stat_notify_error).into(holder.mUserImageView);
-    Picasso.with(holder.mPostImageView.getContext()).load(post.getPostImageUrl()).centerCrop().resize(QuickReturnUtils.dp2px(mContext,346),QuickReturnUtils.dp2px(mContext,320)).error(android.R.drawable.stat_notify_error).into(holder.mPostImageView);
-    Picasso.with(holder.mCommenterOneImageView.getContext()).load(post.getCommenterOneAvatarUrl()).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(mContext,34),QuickReturnUtils.dp2px(mContext,34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterOneImageView);
-    Picasso.with(holder.mCommenterTwoImageView.getContext()).load(post.getCommenterTwoAvatarUrl()).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(mContext,34),QuickReturnUtils.dp2px(mContext,34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterTwoImageView);
-    Picasso.with(holder.mCommenterThreeImageView.getContext()).load(post.getCommenterThreeAvatarUrl()).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(mContext,34),QuickReturnUtils.dp2px(mContext,34)).error(android.R.drawable.stat_notify_error).into(holder.mCommenterThreeImageView);
+    setUpUserImage(holder.mUserImageView,post);
+    setUpDisplayName(holder.mDisplayNameTextView,post);
+    setUpComment(holder.mCommentTextView,post);
+    setUpPlusOne(holder.mPlusOneTextView,post);
+    setUpAddComment(holder.mAddCommentTextView,post);
+    setUpTimestamp(holder.mTimestampTextView,post);
+    setUpMessage(holder.mMessageTextView,post);
+    setUpPostImage(holder.mPostImageView,post);
+    setUpCommenterOneImage(holder.mCommenterOneImageView,post);
+    setUpCommenterTwoImage(holder.mCommenterTwoImageView,post);
+    setUpCommenterThreeImage(holder.mCommenterThreeImageView,post);
     if (position > lastPosition) {
       Animation animation=AnimationUtils.loadAnimation(mContext,R.anim.up_from_bottom);
       holder.itemView.startAnimation(animation);

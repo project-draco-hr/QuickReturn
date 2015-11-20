@@ -1,0 +1,4 @@
+{
+  int plusOneCount=post.getPlusOneCount();
+  tv.setText(tv.getContext().getString(R.string.plus_one,plusOneCount));
+}

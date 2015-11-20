@@ -1,0 +1,6 @@
+{
+  String timestamp=post.getTimestamp();
+  if (!TextUtils.isEmpty(timestamp)) {
+    tv.setText(timestamp);
+  }
+}

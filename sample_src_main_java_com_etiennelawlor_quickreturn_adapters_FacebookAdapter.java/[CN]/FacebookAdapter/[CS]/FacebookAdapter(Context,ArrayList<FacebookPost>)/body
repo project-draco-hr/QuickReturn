@@ -1,5 +1,0 @@
-{
-  mContext=context;
-  mFacebookPosts=facebookPosts;
-  mInflater=LayoutInflater.from(mContext);
-}

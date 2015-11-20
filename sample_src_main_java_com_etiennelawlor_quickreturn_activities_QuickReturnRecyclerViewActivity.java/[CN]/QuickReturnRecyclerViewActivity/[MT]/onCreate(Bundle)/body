@@ -6,7 +6,7 @@
   if (intent != null) {
     Bundle bundle=intent.getExtras();
     if (bundle != null) {
-      mLayoutManagerType=bundle.getString("layout_manager");
+      sLayoutManagerType=bundle.getString("layout_manager");
     }
   }
   mSectionsPagerAdapter=new SectionsPagerAdapter(getFragmentManager());

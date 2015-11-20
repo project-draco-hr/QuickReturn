@@ -1,0 +1,6 @@
+{
+  String avatarUrl=post.getAvatarUrl();
+  if (!TextUtils.isEmpty(avatarUrl)) {
+    Picasso.with(iv.getContext()).load(avatarUrl).transform(mTransformation).centerCrop().resize(QuickReturnUtils.dp2px(mContext,50),QuickReturnUtils.dp2px(mContext,50)).error(android.R.drawable.stat_notify_error).into(iv);
+  }
+}

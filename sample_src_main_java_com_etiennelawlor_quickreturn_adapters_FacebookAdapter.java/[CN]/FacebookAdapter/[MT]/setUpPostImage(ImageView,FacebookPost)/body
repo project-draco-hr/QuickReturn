@@ -1,0 +1,7 @@
+{
+  Context context=iv.getContext();
+  String postImageUrl=post.getPostImageUrl();
+  if (!TextUtils.isEmpty(postImageUrl)) {
+    Picasso.with(context).load(postImageUrl).centerCrop().resize(QuickReturnUtils.dp2px(context,346),QuickReturnUtils.dp2px(context,320)).error(android.R.drawable.stat_notify_error).into(iv);
+  }
+}

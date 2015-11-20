@@ -2,14 +2,14 @@
   super.onViewCreated(view,savedInstanceState);
   mValues=getResources().getStringArray(R.array.countries);
   if (mLayoutManagerType.equals("linear")) {
-    CountriesLinearLayoutAdapter countriesLinearLayoutAdapter=new CountriesLinearLayoutAdapter(getActivity(),Arrays.asList(mValues));
+    CountriesLinearLayoutAdapter countriesLinearLayoutAdapter=new CountriesLinearLayoutAdapter(Arrays.asList(mValues));
     RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
     mRecyclerView.setLayoutManager(layoutManager);
     mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),null));
     mRecyclerView.setAdapter(countriesLinearLayoutAdapter);
   }
  else   if (mLayoutManagerType.equals("grid")) {
-    CountriesGridLayoutAdapter countriesGridLayoutAdapter=new CountriesGridLayoutAdapter(getActivity(),Arrays.asList(mValues));
+    CountriesGridLayoutAdapter countriesGridLayoutAdapter=new CountriesGridLayoutAdapter(Arrays.asList(mValues));
     RecyclerView.LayoutManager layoutManager=new GridLayoutManager(getActivity(),2);
     mRecyclerView.setLayoutManager(layoutManager);
     mRecyclerView.addItemDecoration(new GridSpacesItemDecoration(QuickReturnUtils.dp2px(getActivity(),8)));

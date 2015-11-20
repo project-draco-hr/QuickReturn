@@ -1,0 +1,8 @@
+{
+  String commenterOneDisplayName=post.getCommenterOneDisplayName();
+  String comment=post.getComment();
+  Spanned styledText=Html.fromHtml("<b>" + commenterOneDisplayName + "</b> "+ comment);
+  if (!TextUtils.isEmpty(styledText)) {
+    tv.setText(styledText);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  String timestamp=tweet.getTimestamp();
+  if (!TextUtils.isEmpty(timestamp)) {
+    tv.setText(timestamp);
+  }
+}

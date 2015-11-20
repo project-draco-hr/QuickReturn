@@ -1,0 +1,4 @@
+{
+  int starCount=tweet.getStarCount();
+  tv.setText(String.valueOf(starCount));
+}

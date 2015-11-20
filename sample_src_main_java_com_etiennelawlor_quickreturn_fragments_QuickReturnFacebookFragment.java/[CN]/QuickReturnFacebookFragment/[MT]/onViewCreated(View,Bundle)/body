@@ -12,7 +12,7 @@
     post.setMessage(mMessages[i]);
     posts.add(post);
   }
-  FacebookAdapter adapter=new FacebookAdapter(getActivity(),posts);
+  FacebookAdapter adapter=new FacebookAdapter(posts);
   mRecyclerView.setHasFixedSize(true);
   RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity());
   mRecyclerView.setLayoutManager(layoutManager);

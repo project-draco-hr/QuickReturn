@@ -1,0 +1,6 @@
+{
+  String displayName=post.getDisplayName();
+  if (!TextUtils.isEmpty(displayName)) {
+    tv.setText(displayName);
+  }
+}

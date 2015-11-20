@@ -1,12 +1,12 @@
 {
   FacebookPost post=mFacebookPosts.get(position);
   if (post != null) {
-    holder.mDisplayNameTextView.setText(post.getDisplayName());
-    holder.mTimestampTextView.setText(post.getTimestamp());
-    holder.mLikeCountTextView.setText(mContext.getResources().getQuantityString(R.plurals.likes,post.getLikeCount(),post.getLikeCount()));
-    holder.mCommentCountTextView.setText(mContext.getResources().getQuantityString(R.plurals.comments,post.getCommentCount(),post.getCommentCount()));
-    holder.mMessageTextView.setText(post.getMessage());
-    Picasso.with(holder.mUserImageView.getContext()).load(post.getAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(mContext,34),QuickReturnUtils.dp2px(mContext,34)).error(android.R.drawable.stat_notify_error).into(holder.mUserImageView);
-    Picasso.with(holder.mPostImageView.getContext()).load(post.getPostImageUrl()).centerCrop().resize(QuickReturnUtils.dp2px(mContext,346),QuickReturnUtils.dp2px(mContext,320)).error(android.R.drawable.stat_notify_error).into(holder.mPostImageView);
+    setUpUserImage(holder.mUserImageView,post);
+    setUpDisplayName(holder.mDisplayNameTextView,post);
+    setUpTimestamp(holder.mTimestampTextView,post);
+    setUpLikeCount(holder.mLikeCountTextView,post);
+    setUpCommentCount(holder.mCommentCountTextView,post);
+    setUpMessage(holder.mMessageTextView,post);
+    setUpPostImage(holder.mPostImageView,post);
   }
 }

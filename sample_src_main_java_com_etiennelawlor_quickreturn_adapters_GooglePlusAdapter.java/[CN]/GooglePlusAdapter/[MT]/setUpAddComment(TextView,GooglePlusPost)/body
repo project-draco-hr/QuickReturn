@@ -1,0 +1,4 @@
+{
+  int commentCount=post.getCommentCount();
+  tv.setText(String.valueOf(commentCount));
+}

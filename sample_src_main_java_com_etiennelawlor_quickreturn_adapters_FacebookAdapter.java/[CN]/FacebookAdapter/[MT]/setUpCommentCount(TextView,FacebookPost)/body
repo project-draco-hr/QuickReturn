@@ -1,0 +1,4 @@
+{
+  int commentCount=post.getCommentCount();
+  tv.setText(tv.getContext().getResources().getQuantityString(R.plurals.comments,commentCount,commentCount));
+}

@@ -1,0 +1,7 @@
+{
+  Context context=iv.getContext();
+  String avatarUrl=post.getAvatarUrl();
+  if (!TextUtils.isEmpty(avatarUrl)) {
+    Picasso.with(context).load(avatarUrl).centerCrop().resize(QuickReturnUtils.dp2px(context,34),QuickReturnUtils.dp2px(context,34)).error(android.R.drawable.stat_notify_error).into(iv);
+  }
+}

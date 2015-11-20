@@ -1,0 +1,6 @@
+{
+  String commenterTwoAvatarUrl=post.getCommenterTwoAvatarUrl();
+  if (!TextUtils.isEmpty(commenterTwoAvatarUrl)) {
+    Picasso.with(iv.getContext()).load(commenterTwoAvatarUrl).transform(mTransformation2).centerCrop().resize(QuickReturnUtils.dp2px(mContext,34),QuickReturnUtils.dp2px(mContext,34)).error(android.R.drawable.stat_notify_error).into(iv);
+  }
+}

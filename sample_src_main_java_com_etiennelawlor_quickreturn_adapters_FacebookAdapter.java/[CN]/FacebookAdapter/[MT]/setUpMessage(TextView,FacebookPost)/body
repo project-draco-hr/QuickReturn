@@ -1,0 +1,6 @@
+{
+  String message=post.getMessage();
+  if (!TextUtils.isEmpty(message)) {
+    tv.setText(message);
+  }
+}

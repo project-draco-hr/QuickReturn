@@ -1,0 +1,4 @@
+{
+  int retweetCount=tweet.getRetweetCount();
+  tv.setText(String.valueOf(retweetCount));
+}

@@ -3,17 +3,13 @@
     ItemViewHolder itemViewHolder=(ItemViewHolder)holder;
     Tweet tweet=getItem(position);
     if (tweet != null) {
-      itemViewHolder.mDisplayNameTextView.setText(tweet.getDisplayName());
-      itemViewHolder.mUsernameTextView.setText(tweet.getUsername());
-      itemViewHolder.mTimestampTextView.setText(tweet.getTimestamp());
-      itemViewHolder.mRetweetTextView.setText(String.valueOf(tweet.getRetweetCount()));
-      itemViewHolder.mStarTextView.setText(String.valueOf(tweet.getStarCount()));
-      String message=tweet.getMessage();
-      if (message.length() > 160) {
-        message=message.substring(0,159);
-      }
-      itemViewHolder.mMessageTextView.setText(message);
-      Picasso.with(itemViewHolder.mUserImageView.getContext()).load(tweet.getAvatarUrl()).centerCrop().resize(QuickReturnUtils.dp2px(mContext,50),QuickReturnUtils.dp2px(mContext,50)).error(android.R.drawable.stat_notify_error).into(itemViewHolder.mUserImageView);
+      setUpDisplayName(itemViewHolder.mDisplayNameTextView,tweet);
+      setUpRetweet(itemViewHolder.mRetweetTextView,tweet);
+      setUpStar(itemViewHolder.mStarTextView,tweet);
+      setUpTimestamp(itemViewHolder.mTimestampTextView,tweet);
+      setUpUserImage(itemViewHolder.mUserImageView,tweet);
+      setUpUsername(itemViewHolder.mUsernameTextView,tweet);
+      setUpMessage(itemViewHolder.mMessageTextView,tweet);
     }
   }
  else   if (holder instanceof HeaderViewHolder) {

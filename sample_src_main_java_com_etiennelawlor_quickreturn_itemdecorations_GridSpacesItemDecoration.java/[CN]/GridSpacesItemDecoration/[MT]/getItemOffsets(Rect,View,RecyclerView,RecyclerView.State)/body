@@ -1,14 +1,15 @@
 {
-  if (parent.getChildPosition(view) == 0 || parent.getChildPosition(view) == 1) {
-    outRect.top=space;
+  int childPosition=parent.getChildAdapterPosition(view);
+  if (childPosition == 0 || childPosition == 1) {
+    outRect.top=mSpace;
   }
-  if (parent.getChildPosition(view) % 2 == 0) {
-    outRect.left=space;
-    outRect.right=space / 2;
+  if (childPosition % 2 == 0) {
+    outRect.left=mSpace;
+    outRect.right=mSpace / 2;
   }
  else {
-    outRect.left=space / 2;
-    outRect.right=space;
+    outRect.left=mSpace / 2;
+    outRect.right=mSpace;
   }
-  outRect.bottom=space;
+  outRect.bottom=mSpace;
 }

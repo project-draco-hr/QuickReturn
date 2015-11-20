@@ -1,0 +1,4 @@
+{
+  int likeCount=post.getLikeCount();
+  tv.setText(tv.getContext().getResources().getQuantityString(R.plurals.likes,likeCount,likeCount));
+}

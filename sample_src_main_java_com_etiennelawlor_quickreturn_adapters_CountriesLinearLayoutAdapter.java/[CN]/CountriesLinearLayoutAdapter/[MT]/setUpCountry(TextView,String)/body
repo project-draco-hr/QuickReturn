@@ -1,0 +1,5 @@
+{
+  if (!TextUtils.isEmpty(country)) {
+    tv.setText(country);
+  }
+}

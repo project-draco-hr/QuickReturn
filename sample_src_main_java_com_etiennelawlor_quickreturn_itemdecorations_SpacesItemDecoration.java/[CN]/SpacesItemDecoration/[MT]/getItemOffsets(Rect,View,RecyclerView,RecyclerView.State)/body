@@ -1,20 +1,21 @@
 {
-  if (parent.getChildPosition(view) == 0) {
-    outRect.left=space;
-    outRect.right=space;
-    outRect.top=space;
-    outRect.bottom=space / 2;
+  int childPosition=parent.getChildAdapterPosition(view);
+  if (childPosition == 0) {
+    outRect.left=mSpace;
+    outRect.right=mSpace;
+    outRect.top=mSpace;
+    outRect.bottom=mSpace / 2;
   }
- else   if (parent.getChildPosition(view) == parent.getLayoutManager().getItemCount() - 1) {
-    outRect.left=space;
-    outRect.right=space;
-    outRect.top=space / 2;
-    outRect.bottom=space;
+ else   if (childPosition == parent.getLayoutManager().getItemCount() - 1) {
+    outRect.left=mSpace;
+    outRect.right=mSpace;
+    outRect.top=mSpace / 2;
+    outRect.bottom=mSpace;
   }
  else {
-    outRect.left=space;
-    outRect.right=space;
-    outRect.top=space / 2;
-    outRect.bottom=space / 2;
+    outRect.left=mSpace;
+    outRect.right=mSpace;
+    outRect.top=mSpace / 2;
+    outRect.bottom=mSpace / 2;
   }
 }

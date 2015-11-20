@@ -1,0 +1,6 @@
+{
+  String displayName=tweet.getDisplayName();
+  if (!TextUtils.isEmpty(displayName)) {
+    tv.setText(displayName);
+  }
+}

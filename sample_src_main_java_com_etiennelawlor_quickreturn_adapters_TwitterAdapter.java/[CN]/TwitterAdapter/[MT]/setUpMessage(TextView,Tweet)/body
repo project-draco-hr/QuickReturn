@@ -1,0 +1,9 @@
+{
+  String message=tweet.getMessage();
+  if (message.length() > 160) {
+    message=message.substring(0,159);
+  }
+  if (!TextUtils.isEmpty(message)) {
+    tv.setText(message);
+  }
+}
